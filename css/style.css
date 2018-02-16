@@ -1,0 +1,73 @@
+#logoAnimation{
+  position: fixed;
+  width: 150px;
+  height: 150px;
+  top: 40%;
+  left: 42%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(https://media.giphy.com/media/3oriNXgmyShWPjuaFa/giphy.gif);
+}
+#contentSectionId{
+  margin-bottom: 100px;
+}
+#mainContent{
+  margin-top: 5%;
+}
+#questionPrompt{
+  margin-left: 10%;
+  font-size: 30px;
+}
+html{
+  height: 100%;
+}
+.page-footer{
+  position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+/* question 1 */
+
+.questionOnebox{
+  width: 90%;
+  height: 300px!important;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: solid red;
+  text-align: center;
+}
+#sideContent{
+  border: solid red;
+  height: 500px;
+  margin-top: 5%;
+}
+
+#domestic{
+  background-image: url(https://media.giphy.com/media/3oriNXgmyShWPjuaFa/giphy.gif);
+}
+#international{
+  background-image: url(https://media.giphy.com/media/YiPaivd4VTZNm/giphy.gif);
+}
+
+/* question 2 */
+#usaMap{
+  background-image: url("../images/map/usaRegion0.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.questionTwo{
+  width: 90%;
+  height: 200px;
+  padding-top: 130px;
+  text-align: center;
+  font-size: 20px;
+  color: gray;
+  font-weight: bold;
+}
