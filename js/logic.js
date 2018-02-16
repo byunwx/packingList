@@ -65,6 +65,7 @@ var listGenerator = function(){
 
 
 var changeQuestion = function(index){
+  $("#sideContent").empty();
   listGenerator();
   $("#mainContent").html(mainContentHtml[index]);
   $("#mainContent")
