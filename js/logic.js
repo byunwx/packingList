@@ -11,6 +11,7 @@ var userInputBudget
 var userInputGender
 var userInputChild
 var userInputPets
+var userAnswerListArr=[];
 
 // var userItem=[];
 //
@@ -27,7 +28,42 @@ var makeBackBone = function (){
   $("body").empty()
   $("body").html("<nav><div class='nav-wrapper'><a href=''#!'' class='brand-logo'>Logo</a><span id='questionPrompt'>center mecenter mecenter mecenter mecenter mecenter mecenter me</span><ul class='right hide-on-med-and-down'><li><a href=''></a></li></ul></div></nav><div class='container' id='contentSectionId'><div class='row'><div class='col l9' id='mainContent'></div><div class='col l3' id='sideContent'></div></div></div><footer class='page-footer'><div class='container'><div class='row'><div class='col l12'><h5 class='white-text' id='footerContent'>Footer Content</h5></div></div></div></footer>");
 }
+
+var listGenerator = function(){
+
+  for (var i = 0; i < userAnswerListArr.length; i++) {
+    var newArr=[];
+    // if(input[i]=="inputZer"){
+    //   newArr=inputZero;
+    // }else if(input[i]=="inputOn"){
+    //   newArr=inputOne;
+    // }else if(input[i]=="inputTw"){
+    //   newArr=inputTwo;
+    // }else if(input[i]=="inputThr"){
+    //   newArr=inputThree;
+    // }else{
+    //   console.log("no arr in list Bar")
+    // }
+    var l=i+1;
+
+    console.log("listGenerator")
+    if (userAnswerListArr.length >0) {
+      var list="<li id='"+userAnswerListArr[i]+"ListBar'><div class='collapsible-header'><i class='material-icons'>"+l+"</i>"+userAnswerListArr[i]+"</div><div class='collapsible-body'><span>"+newArr+"</span></div></li>";
+      if ($("#theList").html()) {
+        list= $("#theList").html()+"<li id='"+userAnswerListArr[i]+"ListBar'><div class='collapsible-header'><i class='material-icons'>"+l+"</i>"+userAnswerListArr[i]+"</div><div class='collapsible-body'><span>"+newArr+"</span></div></li>";
+        $("#sideContent").empty();
+      }
+      $("#sideContent").html("<h5>What we know so far</h5><br><ul class='collapsible popout' data-collapsible='accordion' id='theList'>"+list+"</ol>");
+    }else{
+      console.log("error at ListBar");
+    }
+  }
+
+}
+
+
 var changeQuestion = function(index){
+  listGenerator();
   $("#mainContent").html(mainContentHtml[index]);
   questionPromptGenerator(index);
   if (index==0){
@@ -38,11 +74,14 @@ var changeQuestion = function(index){
     console.log("error at ChangeQuestion");
   }
   htmlIndex+=1;
-
+  console.log(userAnswerListArr);
 }
+
+
 var questionPromptGenerator = function (index){
   $("#questionPrompt").text(questionPromptArr[index]);
 }
+
 var questionOne = function(){
   $("#international").on("click", function(){
     userInputDomestic="international";
@@ -52,9 +91,10 @@ var questionOne = function(){
   });
 
   $("#domestic").on("click", function(){
-    userInputDomestic="domestic";
+    userInputDomestic=this.id;
     console.log(userInputDomestic);
     $("#mainContent").empty();
+    userAnswerListArr.push(this.id);
     changeQuestion(1);
   });
 }
@@ -78,13 +118,15 @@ var questionTwo = function(){
   $(".questionTwo").on("click", function(){
     userInputRegion=this.id;
     console.log(userInputRegion);
+    userAnswerListArr.push(this.id);
     // changeQuestion(2);
+    console.log(userAnswerListArr);
   })
 }
 
 
-setTimeout(makeBackBone, 3000);
-setTimeout(changeQuestion, 3500, htmlIndex);
+setTimeout(makeBackBone, 2000);
+setTimeout(changeQuestion, 2200, htmlIndex);
 
 
 
