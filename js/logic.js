@@ -1,5 +1,7 @@
 $(document).ready(function(){
-var mainContentHtml= ["<div class='col l6'><div class='questionOnebox circle' id='domestic'>Domestic</div></div><div class='col l6'><div class='questionOnebox circle' id='international'>international</div></div>", "<div id='usaMap'><div class='row'><div class='col l4'><div class='questionTwo' id='usaWest'>West</div></div><div class='col l4'><div class='questionTwo' id='usaMidwest'>Midwest</div></div><div class='col l4'><div class='questionTwo' id='usaNortheast'>Northeast</div></div></div><div class='row'><div class='col l4 offset-l4'><div class='questionTwo' id='usaSouthwest'>Southwest</div></div><div class='col l4'><div class='questionTwo' id='usaSoutheast'>Southeast</div></div></div></div>"];
+var mainContentHtml= ["<div class='col l6'><div class='questionOnebox circle' id='domestic'>Domestic</div></div><div class='col l6'><div class='questionOnebox circle' id='international'>international</div></div>", "<div id='usaMap'><div class='row'><div class='col l4'><div class='questionTwo' id='usaWest'>West</div></div><div class='col l4'><div class='questionTwo' id='usaMidwest'>Midwest</div></div><div class='col l4'><div class='questionTwo' id='usaNortheast'>Northeast</div></div></div><div class='row'><div class='col l4 offset-l4'><div class='questionTwo' id='usaSouthwest'>Southwest</div></div><div class='col l4'><div class='questionTwo' id='usaSoutheast'>Southeast</div></div></div></div>",
+ "<div class='col l6'><img class='questionThreeImg' id='Business' src='https://png.icons8.com/metro/1600/business.png' alt='Business'><p class='questionThreeText'>Business</p></div><div class='col l6'><img class='questionThreeImg' id='Leisure' src='https://cdn3.iconfinder.com/data/icons/abstract-1/512/leisure_A-128.png' alt='Leisure'><p class='questionThreeText'>Leisure</p></div>",
+  "<div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Spring' src='http://icons.iconarchive.com/icons/icons8/windows-8/256/Astrology-Spring-icon.png' alt='String'></div><div class='col m2'><p>Spring</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class ='questionFour' id='Summer' src='http://icons.iconarchive.com/icons/icons8/windows-8/256/Astrology-Summer-icon.png' alt='Summer'></div><div class='col m2'><p>Summer</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Fall' src='http://icons.iconarchive.com/icons/icons8/windows-8/256/Astrology-Autumn-icon.png' alt='Fall'></div><div class='col m2'><p>Fall</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Winter' src='http://icons.iconarchive.com/icons/icons8/windows-8/256/Astrology-Winter-icon.png' alt='Winter'></div><div class='col m2'><p>Winter</p></div></div></div>"];
 var questionPromptArr=["Domestic or International?", "Which region do you want to travel?"]
 var htmlIndex=0;
 var userInputDomestic
@@ -73,6 +75,10 @@ var changeQuestion = function(index){
     questionOne();
   }else if (index==1){
     questionTwo();
+  }else if (index==2){
+    questionThree();
+  }else if (index==3){
+    questionFour();
   }else{
     console.log("error at ChangeQuestion");
   }
@@ -135,9 +141,63 @@ var questionTwo = function(){
     userInputRegion=this.id;
     console.log(userInputRegion);
     userAnswerListArr.push(this.id);
-    // changeQuestion(2);
+    changeQuestion(2);
     console.log(userAnswerListArr);
   })
+}
+
+var questionThree = function() {
+  $("#Business").on("click", function () {
+      // function to add items to list
+        userInputTravelType="business";
+        console.log(userInputTravelType);
+        userAnswerListArr.push(this.id);
+        changeQuestion(3);
+        console.log(userAnswerListArr);
+  })
+  $("#Leisure").on("click", function () {
+      // function to add items to list
+        userInputTravelType="leisure";
+        console.log(userInputTravelType);
+        userAnswerListArr.push(this.id);
+        changeQuestion(3);
+        console.log(userAnswerListArr);
+  })
+}
+
+var questionFour = function(){
+    $("#Spring").on("click", function() {
+        // function to add items to list
+        userInputTravelType="spring";
+        console.log(userInputTravelType);
+        userAnswerListArr.push(this.id);
+        changeQuestion(4);
+        console.log(userAnswerListArr);
+    })
+    $("#Summer").on("click", function() {
+        // function to add items to list
+        userInputTravelType="summer";
+        console.log(userInputTravelType);
+        userAnswerListArr.push(this.id);
+        changeQuestion(4);
+        console.log(userAnswerListArr);
+    })
+    $("#Fall").on("click", function() {
+        // function to add items to list
+        userInputTravelType="fall";
+        console.log(userInputTravelType);
+        userAnswerListArr.push(this.id);
+        changeQuestion(4);
+        console.log(userAnswerListArr);
+    })
+    $("#Winter").on("click", function() {
+        // function to add items to list
+        userInputTravelType="winter";
+        console.log(userInputTravelType);
+        userAnswerListArr.push(this.id);
+        changeQuestion(4);
+        console.log(userAnswerListArr);
+    })
 }
 
 
