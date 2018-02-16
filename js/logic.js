@@ -8,7 +8,7 @@ var mainContentHtml= ["<div class='col l6'><div class='questionOnebox circle' id
 "<div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Spring' src='http://icons.iconarchive.com/icons/icons8/windows-8/256/Astrology-Spring-icon.png' alt='String'></div><div class='col m2'><p>Spring</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class ='questionFour' id='Summer' src='http://icons.iconarchive.com/icons/icons8/windows-8/256/Astrology-Summer-icon.png' alt='Summer'></div><div class='col m2'><p>Summer</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Fall' src='http://icons.iconarchive.com/icons/icons8/windows-8/256/Astrology-Autumn-icon.png' alt='Fall'></div><div class='col m2'><p>Fall</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Winter' src='http://icons.iconarchive.com/icons/icons8/windows-8/256/Astrology-Winter-icon.png' alt='Winter'></div><div class='col m2'><p>Winter</p></div></div></div>",
 
   "<form class='col s9 questionFive' id='mainContent'><div class='row-center'><div class='input-field col s6 offset-s3'><input id='daysStaying' type='text' class='validate'><label class='active' for='daysStaying'> Enter number of days</label></div></div><button class='btn waves-effect waves-light' id='questionFiveButton' type='submit' name='action'>Submit</button></form>",
-  
+
   "<form class='col s9 questionSix' id='mainContent'><div class='row-center'><div class='input-field col s6 offset-s3'><input id='userBudget' type='text' class='validate'><label class='active' for='budget'> Enter budget</label></div></div><button class='btn waves-effect waves-light' id='questionSixButton' type='submit' name='action'>Submit</button></form>"];
 
 var questionPromptArr=["Will you be traveling domestically or internationally?", "Select the region you will be traveling to.", "Are you traveling on business or for leisure?", "When will you be traveling?", "How many days will you be staying?", "What is your budget for this trip?", "Tell us about yourself."];
@@ -24,7 +24,7 @@ var userInputGender
 var userInputChild
 var userInputPets
 var userAnswerListArr=[];
-
+var iconArr=["flight", "map", "business_center", "wb_sunny", "schedule", "attach_money", "wc"];
 // var userItem=[];
 //
 // var addToUserItem= function(arr)={
@@ -56,7 +56,7 @@ var listGenerator = function(){
     // }else{
     //   console.log("no arr in list Bar")
     // }
-    var l=i+1;
+    var l=iconArr[i];
 
     console.log("listGenerator")
     if (userAnswerListArr.length >0) {
@@ -225,7 +225,7 @@ var questionFive = function(){
       {
       userInputDays = days;
       userAnswerListArr.push(userInputDays);
-      $("#mainContent").empty();       
+      $("#mainContent").empty();
       changeQuestion(5);
       return true;
       } else
@@ -242,12 +242,12 @@ var questionSix = function(){
       event.preventDefault();
       var numbers = /^[0-9]+$/;
       var budget = $("#userBudget").val();
-      
+
       if(budget.match(numbers))
       {
       userInputBudget = budget;
       userAnswerListArr.push(userInputBudget);
-      $("#mainContent").empty();       
+      $("#mainContent").empty();
       changeQuestion(6);
       return true;
       } else
