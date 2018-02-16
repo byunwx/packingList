@@ -71,3 +71,24 @@ html{
   color: gray;
   font-weight: bold;
 }
+
+/* question 3 */
+.questionThreeImg {
+  position: relative;
+  top: 50%;
+  left: 41.5%;
+  height: 6rem;
+  width: 6rem;
+}
+
+.questionThreeText {
+  position: relative;
+  top: 30%;
+  left: 45%;
+}
+
+/* question 4 */
+.questionFour {
+  height: 4rem;
+  width: 4rem;
+}
