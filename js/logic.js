@@ -65,6 +65,9 @@ var listGenerator = function(){
 var changeQuestion = function(index){
   listGenerator();
   $("#mainContent").html(mainContentHtml[index]);
+  $("#mainContent")
+      .velocity("fadeIn", { duration: 1000 });
+
   questionPromptGenerator(index);
   if (index==0){
     questionOne();
@@ -83,6 +86,19 @@ var questionPromptGenerator = function (index){
 }
 
 var questionOne = function(){
+
+  $(".questionOnebox").hover(function(){
+    $("#"+this.id).velocity(
+      { scale: 1.1}, {
+        duration: 200
+      });
+  },function(){
+    $("#"+this.id).velocity(
+      { scale: 1.0}, {
+        duration: 200
+      });
+  });
+
   $("#international").on("click", function(){
     userInputDomestic="international";
     $("#mainContent").empty();
@@ -125,8 +141,8 @@ var questionTwo = function(){
 }
 
 
-setTimeout(makeBackBone, 2000);
-setTimeout(changeQuestion, 2200, htmlIndex);
+setTimeout(makeBackBone, 1000);
+setTimeout(changeQuestion, 1200, htmlIndex);
 
 
 

@@ -39,11 +39,9 @@ html{
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  border: solid red;
   text-align: center;
 }
 #sideContent{
-  border: solid red;
   height: 500px;
   margin-top: 5%;
 }
