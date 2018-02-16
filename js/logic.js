@@ -1,6 +1,6 @@
 $(document).ready(function(){
 var mainContentHtml= ["<div class='col l6'><div class='questionOnebox circle' id='domestic'>Domestic</div></div><div class='col l6'><div class='questionOnebox circle' id='international'>international</div></div>", "<div id='usaMap'><div class='row'><div class='col l4'><div class='questionTwo' id='usaWest'>West</div></div><div class='col l4'><div class='questionTwo' id='usaMidwest'>Midwest</div></div><div class='col l4'><div class='questionTwo' id='usaNortheast'>Northeast</div></div></div><div class='row'><div class='col l4 offset-l4'><div class='questionTwo' id='usaSouthwest'>Southwest</div></div><div class='col l4'><div class='questionTwo' id='usaSoutheast'>Southeast</div></div></div></div>"];
-
+var questionPromptArr=["Domestic or International?", "Which region do you want to travel?"]
 var htmlIndex=0;
 var userInputDomestic
 var userInputRegion
@@ -29,6 +29,7 @@ var makeBackBone = function (){
 }
 var changeQuestion = function(index){
   $("#mainContent").html(mainContentHtml[index]);
+  questionPromptGenerator(index);
   if (index==0){
     questionOne();
   }else if (index==1){
@@ -39,7 +40,9 @@ var changeQuestion = function(index){
   htmlIndex+=1;
 
 }
-
+var questionPromptGenerator = function (index){
+  $("#questionPrompt").text(questionPromptArr[index]);
+}
 var questionOne = function(){
   $("#international").on("click", function(){
     userInputDomestic="international";
