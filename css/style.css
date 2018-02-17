@@ -31,6 +31,10 @@ html{
     color: white;
     text-align: center;
 }
+#blackIcon{
+  color: black!important;
+}
+
 /* question 1 */
 
 .questionOnebox{

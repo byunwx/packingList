@@ -75,6 +75,7 @@ var listGenerator = function(){
 
 
 var changeQuestion = function(index){
+  footerMaker();
   $("#sideContent").empty();
   listGenerator();
   console.log(mainContentHtml[index]);
@@ -258,7 +259,21 @@ var questionSix = function(){
       console.log(budget);
   })
 }
+var footerMaker= function (){
+  $("#footerContent").empty();
+  for (var i = 0; i < iconArr.length; i++) {
+    var l= iconArr[i];
+    var newSpan=document.createElement("span");
 
+    if (i==htmlIndex) {
+      newSpan.innerHTML="<i class='material-icons' id='blackIcon'>"+l+"</i>";
+      $("#footerContent").append(newSpan);
+    }else{
+      newSpan.innerHTML="<i class='material-icons'>"+l+"</i>";
+      $("#footerContent").append(newSpan);
+    }
+  }
+}
 
 setTimeout(makeBackBone, 1000);
 setTimeout(changeQuestion, 1200, htmlIndex);
