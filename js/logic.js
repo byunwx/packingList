@@ -58,7 +58,31 @@ var springItem=["Light Clothes", "Medication", "Umbrella"];
 var summerItem=[];
 var fallItem=["Sweater", "Light Jacket", "Boots", "Jeans", "Umbrella", "Medication"];
 var winterItem=["Sweater", "Gloves", "Warm Hat", "Snow Boots", "Chapstick", "Jacket"];
-var userItem=[basicNeeds];
+var maleItem=[];
+var femaleItem=[];
+var kidsItem=[];
+var petsItem=[];
+var userItem=[];
+
+var choice1;
+var choice2;
+var choice3;
+var choice4;
+var choice7;
+var choice8;
+var choice9;
+
+var combineUserItem = function(){
+  addToUserItem(basicNeeds);
+  addToUserItem(choice1);
+  addToUserItem(choice2);
+  addToUserItem(choice3);
+  addToUserItem(choice4);
+  addToUserItem(choice7);
+  addToUserItem(choice8);
+  addToUserItem(choice9);
+  console.log(userItem);
+}
 
 var addToUserItem= function(arr){
   for (var i = 0; i < arr.length; i++) {
@@ -206,7 +230,7 @@ var questionOne = function(){
     console.log(userInputDomestic);
     $("#mainContent").empty();
     userAnswerListArr.splice(0, 1, this.id);
-
+    choice1=domesticItem;
     localStorage.setItem("userInputDomestic", userInputDomestic);
     changeQuestion(1);
   });
@@ -239,7 +263,7 @@ var questionTwo = function(){
     console.log(userInputRegion);
     userAnswerListArr.splice(1, 1, this.id);
     console.log(userAnswerListArr);
-    addToUserItem(region);
+    choice2=region;
     localStorage.setItem("userInputRegion", userInputRegion);
     changeQuestion(2);
   })
@@ -253,7 +277,7 @@ var questionThree = function() {
         userAnswerListArr.splice(2, 1, this.id);
         changeQuestion(3);
         console.log(userAnswerListArr);
-        addToUserItem(businessItem);
+        choice3=businessItem;
         localStorage.setItem("userInputTravelType", userInputTravelType);
   })
   $("#Leisure").on("click", function () {
@@ -263,7 +287,7 @@ var questionThree = function() {
         userAnswerListArr.splice(2, 1, this.id);
         changeQuestion(3);
         console.log(userAnswerListArr);
-        addToUserItem(leisureItem);
+        choice3=leisureItem;
         localStorage.setItem("userInputTravelType", userInputTravelType);
   })
 }
@@ -293,7 +317,7 @@ var questionFour = function(){
 
         console.log(userAnswerListArr);
         $("body").css('background-image', '');
-        addToUserItem(springItem);
+        choice4=springItem;
         localStorage.setItem("userInputSeason", userInputSeason);
         changeQuestion(4);
     })
@@ -305,7 +329,7 @@ var questionFour = function(){
 
         console.log(userAnswerListArr);
         $("body").css('background-image', '');
-        addToUserItem(summerItem);
+        choice4=summerItem;
         localStorage.setItem("userInputSeason", userInputSeason);
         changeQuestion(4);
     })
@@ -317,7 +341,7 @@ var questionFour = function(){
 
         console.log(userAnswerListArr);
         $("body").css('background-image', '');
-        addToUserItem(fallItem);
+        choice4=fallItem;
         localStorage.setItem("userInputSeason", userInputSeason);
         changeQuestion(4);
     })
@@ -328,7 +352,7 @@ var questionFour = function(){
         userAnswerListArr.splice(3, 1, this.id);
         console.log(userAnswerListArr);
         $("body").css('background-image', '');
-        addToUserItem(winterItem);
+        choice4=winterItem;
         localStorage.setItem("userInputSeason", userInputSeason);
         changeQuestion(4);
     })
@@ -385,6 +409,7 @@ var questionSeven = function() {
         userInputGender="male";
         console.log(userInputGender);
         userAnswerListArr.splice(6, 1, this.id);
+        choice7=maleItem;
         localStorage.setItem("userInputGender", userInputGender);
         changeQuestion(7);
         console.log(userAnswerListArr);
@@ -394,6 +419,7 @@ var questionSeven = function() {
         userInputGender="female";
         console.log(userInputGender);
         userAnswerListArr.splice(6, 1, this.id);
+        choice7=femaleItem;
         localStorage.setItem("userInputGender", userInputGender);
         changeQuestion(7);
         console.log(userAnswerListArr);
@@ -406,6 +432,7 @@ var questionEight = function() {
         userInputChild="kids";
         console.log(userInputChild);
         userAnswerListArr.splice(7, 1, this.id);
+        choice8=kidsItem;
         localStorage.setItem("userInputChild", userInputChild);
         changeQuestion(8);
         console.log(userAnswerListArr);
@@ -415,6 +442,7 @@ var questionEight = function() {
         userInputChild="no-kids";
         console.log(userInputChild);
         userAnswerListArr.splice(7, 1, this.id);
+        choice8=[];
         localStorage.setItem("userInputChild", userInputChild);
         changeQuestion(8);
         console.log(userAnswerListArr);
@@ -428,18 +456,22 @@ var questionNine = function() {
         userInputPets="pets";
         console.log(userInputPets);
         userAnswerListArr.splice(8, 1,this.id);
+        choice9=petsItem;
         localStorage.clear();
         changeQuestion(9);
         console.log(userAnswerListArr);
+        combineUserItem();
   })
   $("#no-pets").on("click", function () {
       // function to add items to list
         userInputPets="no-pets";
         console.log(userInputPets);
         userAnswerListArr.splice(8, 1,this.id);
+        choice9=[];
         localStorage.clear();
         changeQuestion(9);
         console.log(userAnswerListArr);
+        combineUserItem();
   })
 }
 
