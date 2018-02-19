@@ -3,15 +3,15 @@ var mainContentHtml= ["<div class='col l6'><div class='questionOnebox circle' id
 
 "<div id='usaMap'><div class='row'><div class='col l4'><div class='questionTwo' id='usaWest'>West</div></div><div class='col l4'><div class='questionTwo' id='usaMidwest'>Midwest</div></div><div class='col l4'><div class='questionTwo' id='usaNortheast'>Northeast</div></div></div><div class='row'><div class='col l4 offset-l4'><div class='questionTwo' id='usaSouthwest'>Southwest</div></div><div class='col l4'><div class='questionTwo' id='usaSoutheast'>Southeast</div></div></div></div>",
 
- "<div class='col l6'><img class='questionThreeImg' id='Business' src='https://png.icons8.com/metro/1600/business.png' alt='Business'><p class='questionThreeText'>Business</p></div><div class='col l6'><img class='questionThreeImg' id='Leisure' src='https://cdn3.iconfinder.com/data/icons/abstract-1/512/leisure_A-128.png' alt='Leisure'><p class='questionThreeText'>Leisure</p></div>",
+"<div class='col l6'><img class='questionThreeImg' id='Business' src='https://png.icons8.com/metro/1600/business.png' alt='Business'><p class='questionThreeText'>Business</p></div><div class='col l6'><img class='questionThreeImg' id='Leisure' src='https://cdn3.iconfinder.com/data/icons/abstract-1/512/leisure_A-128.png' alt='Leisure'><p class='questionThreeText'>Leisure</p></div>",
 
 "<div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Spring' src='http://icons.iconarchive.com/icons/icons8/windows-8/256/Astrology-Spring-icon.png' alt='String'></div><div class='col m2'><p>Spring</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class ='questionFour' id='Summer' src='http://icons.iconarchive.com/icons/icons8/windows-8/256/Astrology-Summer-icon.png' alt='Summer'></div><div class='col m2'><p>Summer</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Fall' src='http://icons.iconarchive.com/icons/icons8/windows-8/256/Astrology-Autumn-icon.png' alt='Fall'></div><div class='col m2'><p>Fall</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Winter' src='http://icons.iconarchive.com/icons/icons8/windows-8/256/Astrology-Winter-icon.png' alt='Winter'></div><div class='col m2'><p>Winter</p></div></div></div>",
 
-  "<form class='col s9 questionFive' id='mainContent'><div class='row-center'><div class='input-field col s6 offset-s3'><input id='daysStaying' type='text' class='validate'><label class='active' for='daysStaying'> Enter number of days</label></div></div><button class='btn waves-effect waves-light' id='questionFiveButton' type='submit' name='action'>Submit</button></form>",
+"<form class='col s9 questionFive' id='mainContent'><div class='row-center'><div class='input-field col s6 offset-s3'><input id='daysStaying' type='text' class='validate'><label class='active' for='daysStaying'> Enter number of days</label></div></div><button class='btn waves-effect waves-light' id='questionFiveButton' type='submit' name='action'>Submit</button></form>",
   
-  "<form class='col s9 questionSix' id='mainContent'><div class='row-center'><div class='input-field col s6 offset-s3'><input id='userBudget' type='text' class='validate'><label class='active' for='budget'> Enter budget</label></div></div><button class='btn waves-effect waves-light' id='questionSixButton' type='submit' name='action'>Submit</button></form>"];
+"<form class='col s9 questionSix' id='mainContent'><div class='row-center'><div class='input-field col s6 offset-s3'><input id='userBudget' type='text' class='validate'><label class='active' for='budget'> Enter budget</label></div></div><button class='btn waves-effect waves-light' id='questionSixButton' type='submit' name='action'>Submit</button></form>"];
 
-var questionPromptArr=["Will you be traveling domestically or internationally?", "Select the region you will be traveling to.", "Are you traveling on business or for leisure?", "When will you be traveling?", "How many days will you be staying?", "What is your budget for this trip?", "Tell us about yourself."];
+var questionPromptArr=["Will you be traveling domestically or internationally?", "Select the region you will be traveling to.", "Are you traveling on business or for leisure?", "When will you be traveling?", "How many days will you be staying?", "What is your budget for this trip? (enter dollar amount)", "Tell us about yourself."];
 
 var htmlIndex=0;
 var userInputDomestic
@@ -72,7 +72,6 @@ var listGenerator = function(){
   }
 
 }
-
 
 var changeQuestion = function(index){
   $("#sideContent").empty();
@@ -184,32 +183,32 @@ var questionThree = function() {
 var questionFour = function(){
     $("#Spring").on("click", function() {
         // function to add items to list
-        userInputTravelType="spring";
-        console.log(userInputTravelType);
+        userInputSeason="spring";
+        console.log(userInputSeason);
         userAnswerListArr.push(this.id);
         changeQuestion(4);
         console.log(userAnswerListArr);
     })
     $("#Summer").on("click", function() {
         // function to add items to list
-        userInputTravelType="summer";
-        console.log(userInputTravelType);
+        userInputSeason="summer";
+        console.log(userInputSeason);
         userAnswerListArr.push(this.id);
         changeQuestion(4);
         console.log(userAnswerListArr);
     })
     $("#Fall").on("click", function() {
         // function to add items to list
-        userInputTravelType="fall";
-        console.log(userInputTravelType);
+        userInputSeason="fall";
+        console.log(userInputSeason);
         userAnswerListArr.push(this.id);
         changeQuestion(4);
         console.log(userAnswerListArr);
     })
     $("#Winter").on("click", function() {
         // function to add items to list
-        userInputTravelType="winter";
-        console.log(userInputTravelType);
+        userInputSeason="winter";
+        console.log(userInputSeason);
         userAnswerListArr.push(this.id);
         changeQuestion(4);
         console.log(userAnswerListArr);
@@ -257,6 +256,134 @@ var questionSix = function(){
       }
       console.log(budget);
   })
+}
+
+// OUTPUT SECTION
+var userOutput = function(){
+  var questionTwo = function(){
+    $("#usaWest").hover(function(){
+      $("#usaMap").css('background-image', 'url(./images/map/usaRegion1.png)');
+    })
+    $("#usaMidwest").hover(function(){
+      $("#usaMap").css('background-image', 'url(./images/map/usaRegion2.png)');
+    })
+    $("#usaNortheast").hover(function(){
+      $("#usaMap").css('background-image', 'url(./images/map/usaRegion3.png)');
+    })
+    $("#usaSouthwest").hover(function(){
+      $("#usaMap").css('background-image', 'url(./images/map/usaRegion4.png)');
+    })
+    $("#usaSoutheast").hover(function(){
+      $("#usaMap").css('background-image', 'url(./images/map/usaRegion5.png)');
+    })
+    $(".questionTwo").on("click", function(){
+      userInputRegion=this.id;
+      console.log(userInputRegion);
+      userAnswerListArr.push(this.id);
+      // changeQuestion(2);
+      // console.log(userAnswerListArr);
+    })
+  }
+
+  var questionThree = function() {
+    $("#Business").on("click", function () {
+        // function to add items to list
+          userInputTravelType="business";
+          console.log(userInputTravelType);
+          // userAnswerListArr.push(this.id);
+          // changeQuestion(3);
+          console.log(userAnswerListArr);
+    })
+
+    $("#Leisure").on("click", function () {
+        // function to add items to list
+          userInputTravelType="leisure";
+          console.log(userInputTravelType);
+          // userAnswerListArr.push(this.id);
+          // changeQuestion(3);
+          console.log(userAnswerListArr);
+    })
+    
+    if userInputTravelType="business"{
+      $("#ouputTravelType").prepend("<img src="images/business.png"/>");
+    }
+    if userInputTravelType="leisure"{
+      $("#ouputTravelType").prepend("<img src="images/leisure.png"/>");
+    }
+  }
+
+  var questionFour = function(){
+    $("#Spring").on("click", function() {
+        // function to add items to list
+        userInputSeason="spring";
+        console.log(userInputSeason);
+        userAnswerListArr.push(this.id);
+        // changeQuestion(4);
+        console.log(userAnswerListArr);
+    })
+    $("#Summer").on("click", function() {
+        // function to add items to list
+        userInputSeason="summer";
+        console.log(userInputSeason);
+        userAnswerListArr.push(this.id);
+        // changeQuestion(4);
+        console.log(userAnswerListArr);
+    })
+    $("#Fall").on("click", function() {
+        // function to add items to list
+        userInputSeason="fall";
+        console.log(userInputSeason);
+        userAnswerListArr.push(this.id);
+        // changeQuestion(4);
+        console.log(userAnswerListArr);
+    })
+    $("#Winter").on("click", function() {
+        // function to add items to list
+        userInputSeason="winter";
+        console.log(userInputSeason);
+        userAnswerListArr.push(this.id);
+        // changeQuestion(4);
+        console.log(userAnswerListArr);
+    })
+
+    if userInputSeason="spring"{
+      $("#outputSeason").prepend("<img src="images/spring.png"/>");
+    }
+    if userInputSeason="summer"{
+      $("#outputSeason").prepend("<img src="images/summer.png"/>");
+    }
+    if userInputSeason="fall"{
+      $("#outputSeason").prepend("<img src="images/fall.png"/>");
+    }
+    if userInputSeason="winter"{
+      $("#outputSeason").prepend("<img src="images/winter.png"/>");
+    }
+}
+
+  var questionFive = function(){
+    $("#questionFiveButton").on("click", function(){
+      event.preventDefault();
+      var numbers = /^[0-9]+$/;
+      var days = $("#daysStaying").val();
+      if(days.match(numbers))
+      {
+      userInputDays = days;
+      userAnswerListArr.push(userInputDays);
+      $("#mainContent").empty();       
+      changeQuestion(5);
+      return true;
+      } else
+      {
+      alert('Please input numeric characters only');
+      return false;
+      }
+      console.log(days);
+  });
+}
+//end of output function 
+}
+
+
 }
 
 
