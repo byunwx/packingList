@@ -128,7 +128,7 @@ var listGenerator = function(){
 
 
 var changeQuestion = function(index){
-  footerMaker();
+
   $("#sideContent").empty();
   listGenerator();
   $("#mainContent").html(mainContentHtml[index]);
@@ -151,7 +151,8 @@ var changeQuestion = function(index){
   }else{
     console.log("error at ChangeQuestion");
   }
-  htmlIndex==index;
+  htmlIndex=index;
+  footerMaker();
   console.log(userAnswerListArr);
 }
 
@@ -246,19 +247,19 @@ var questionThree = function() {
 
 var questionFour = function(){
     $("#Spring").hover(
-      function() {$("body").css({'background-image': 'url(https://media.giphy.com/media/l4hLSoxh3bZOvrn0c/giphy.gif)','background-size': 'cover','background-repeat': 'no-repeat'});}, 
+      function() {$("body").css({'background-image': 'url(https://media.giphy.com/media/l4hLSoxh3bZOvrn0c/giphy.gif)','background-size': 'cover','background-repeat': 'no-repeat'});},
       function() {$("body").css('background-image', '');
     })
     $("#Summer").hover(
-      function() {$("body").css({'background-image': 'url(https://media.giphy.com/media/12G7BxUHSMM2TC/giphy.gif)','background-size': 'cover','background-repeat': 'no-repeat'});}, 
+      function() {$("body").css({'background-image': 'url(https://media.giphy.com/media/12G7BxUHSMM2TC/giphy.gif)','background-size': 'cover','background-repeat': 'no-repeat'});},
       function() {$("body").css('background-image', '');
     })
     $("#Fall").hover(
-      function() {$("body").css({'background-image': 'url(https://media.giphy.com/media/UxTZDNv0Zej4s/giphy.gif)','background-size': 'cover','background-repeat': 'no-repeat'});}, 
+      function() {$("body").css({'background-image': 'url(https://media.giphy.com/media/UxTZDNv0Zej4s/giphy.gif)','background-size': 'cover','background-repeat': 'no-repeat'});},
       function() {$("body").css('background-image', '');
     })
     $("#Winter").hover(
-      function() {$("body").css({'background-image': 'url(https://media.giphy.com/media/OWxrxRHY6afRu/giphy.gif)','background-size': 'cover','background-repeat': 'no-repeat'});}, 
+      function() {$("body").css({'background-image': 'url(https://media.giphy.com/media/OWxrxRHY6afRu/giphy.gif)','background-size': 'cover','background-repeat': 'no-repeat'});},
       function() {$("body").css('background-image', '');
     })
     $("#Spring").on("click", function() {
@@ -350,7 +351,7 @@ var footerMaker= function (){
   for (var i = 0; i < iconArr.length; i++) {
     var l= iconArr[i];
     var newSpan=document.createElement("span");
-
+    
     if (i==htmlIndex) {
       newSpan.innerHTML="<i class='material-icons' id='blackIcon'>"+l+"</i>";
       $("#footerContent").append(newSpan);
