@@ -65,9 +65,33 @@ var saveUserItem = function(){
 
 var makeBackBone = function (){
   $("body").empty()
-  $("body").html("<nav><div class='nav-wrapper'><a href=''#!'' class='brand-logo'>Logo</a><span id='questionPrompt'>center mecenter mecenter mecenter mecenter mecenter mecenter me</span><ul class='right hide-on-med-and-down'><li><a href=''></a></li></ul></div></nav><div class='container' id='contentSectionId'><div class='row'><div class='col l9' id='mainContent'></div><div class='col l3' id='sideContent'></div></div></div><footer class='page-footer'><div class='container'><div class='row'><div class='col l12'><h5 class='white-text' id='footerContent'>Footer Content</h5></div></div></div></footer>");
+  $("body").html("<nav><div class='nav-wrapper'><a href=''#!'' class='brand-logo'>Pack-man</a><span id='questionPrompt'>center mecenter mecenter mecenter mecenter mecenter mecenter me</span><ul class='right hide-on-med-and-down'><li><a href=''></a></li></ul></div></nav><div class='container' id='contentSectionId'><div class='row'><div class='col l9' id='mainContent'></div><div class='col l3' id='sideContent'></div></div></div><footer class='page-footer'><div class='container'><div class='row'><div class='col l12'><h5 class='white-text' id='footerContent'>Footer Content</h5></div></div></div></footer>");
 }
 
+var goBackBtn = function (){
+  $("li").on("click", function(){
+    if (this.id == "0ListBar"){
+      changeQuestion(0);
+    } else if (this. id == "1ListBar"){
+      changeQuestion(1);
+    }else if (this.id == "2ListBar"){
+      changeQuestion(2);
+    }
+    else if(this.id== "3ListBar"){
+      changeQuestion(3);
+    }
+    else if(this.id== "4ListBar"){
+      changeQuestion(4);
+    }
+    else if(this.id== "5ListBar"){
+      changeQuestion(5);
+    }else if(this.id== "6ListBar"){
+      changeQuestion(6);
+    }else{
+      return;
+    }
+  })
+}
 var listGenerator = function(){
 
   for (var i = 0; i < userAnswerListArr.length; i++) {
@@ -87,12 +111,14 @@ var listGenerator = function(){
 
     console.log("listGenerator")
     if (userAnswerListArr.length >0) {
-      var list="<li id='"+userAnswerListArr[i]+"ListBar'><div class='collapsible-header'><i class='material-icons'>"+l+"</i>"+userAnswerListArr[i]+"</div><div class='collapsible-body'><span>"+newArr+"</span></div></li>";
+      var list="<li id='"+i+"ListBar'><div class='collapsible-header'><i class='material-icons'>"+l+"</i>"+userAnswerListArr[i]+"</div><div class='collapsible-body'><span>"+newArr+"</span></div></li>";
+
       if ($("#theList").html()) {
-        list= $("#theList").html()+"<li id='"+userAnswerListArr[i]+"ListBar'><div class='collapsible-header'><i class='material-icons'>"+l+"</i>"+userAnswerListArr[i]+"</div><div class='collapsible-body'><span>"+newArr+"</span></div></li>";
+        list= $("#theList").html()+"<li id='"+i+"ListBar'><div class='collapsible-header'><i class='material-icons'>"+l+"</i>"+userAnswerListArr[i]+"</div><div class='collapsible-body'><span>"+newArr+"</span></div></li>";
         $("#sideContent").empty();
       }
       $("#sideContent").html("<h5>What we know so far</h5><br><ul class='collapsible popout' data-collapsible='accordion' id='theList'>"+list+"</ol>");
+
     }else{
       console.log("error at ListBar");
     }
@@ -105,11 +131,10 @@ var changeQuestion = function(index){
   footerMaker();
   $("#sideContent").empty();
   listGenerator();
-  console.log(mainContentHtml[index]);
   $("#mainContent").html(mainContentHtml[index]);
   $("#mainContent")
       .velocity("fadeIn", { duration: 1000 });
-
+  goBackBtn();
   questionPromptGenerator(index);
   if (index==0){
     questionOne();
@@ -126,7 +151,7 @@ var changeQuestion = function(index){
   }else{
     console.log("error at ChangeQuestion");
   }
-  htmlIndex+=1;
+  htmlIndex==index;
   console.log(userAnswerListArr);
 }
 
@@ -160,7 +185,7 @@ var questionOne = function(){
     userInputDomestic=this.id;
     console.log(userInputDomestic);
     $("#mainContent").empty();
-    userAnswerListArr.push(this.id);
+    userAnswerListArr.splice(0, 1, this.id);
     changeQuestion(1);
     addToUserItem(itemDomestic);
   });
@@ -191,7 +216,7 @@ var questionTwo = function(){
   $(".questionTwo").on("click", function(){
     userInputRegion=this.id;
     console.log(userInputRegion);
-    userAnswerListArr.push(this.id);
+    userAnswerListArr.splice(1, 1, this.id);
     changeQuestion(2);
     console.log(userAnswerListArr);
     addToUserItem(region);
@@ -203,7 +228,7 @@ var questionThree = function() {
       // function to add items to list
         userInputTravelType="business";
         console.log(userInputTravelType);
-        userAnswerListArr.push(this.id);
+        userAnswerListArr.splice(2, 1, this.id);
         changeQuestion(3);
         console.log(userAnswerListArr);
         addToUserItem(businessItem);
@@ -212,7 +237,7 @@ var questionThree = function() {
       // function to add items to list
         userInputTravelType="leisure";
         console.log(userInputTravelType);
-        userAnswerListArr.push(this.id);
+        userAnswerListArr.splice(2, 1, this.id);
         changeQuestion(3);
         console.log(userAnswerListArr);
         addToUserItem(leisureItem);
@@ -240,7 +265,7 @@ var questionFour = function(){
         // function to add items to list
         userInputTravelType="spring";
         console.log(userInputTravelType);
-        userAnswerListArr.push(this.id);
+        userAnswerListArr.splice(3, 1, this.id);
         changeQuestion(4);
         console.log(userAnswerListArr);
         $("body").css('background-image', '');
@@ -250,7 +275,7 @@ var questionFour = function(){
         // function to add items to list
         userInputTravelType="summer";
         console.log(userInputTravelType);
-        userAnswerListArr.push(this.id);
+        userAnswerListArr.splice(3, 1, this.id);
         changeQuestion(4);
         console.log(userAnswerListArr);
         $("body").css('background-image', '');
@@ -260,7 +285,7 @@ var questionFour = function(){
         // function to add items to list
         userInputTravelType="fall";
         console.log(userInputTravelType);
-        userAnswerListArr.push(this.id);
+        userAnswerListArr.splice(3, 1, this.id);
         changeQuestion(4);
         console.log(userAnswerListArr);
         $("body").css('background-image', '');
@@ -270,7 +295,7 @@ var questionFour = function(){
         // function to add items to list
         userInputTravelType="winter";
         console.log(userInputTravelType);
-        userAnswerListArr.push(this.id);
+        userAnswerListArr.splice(3, 1, this.id);
         changeQuestion(4);
         console.log(userAnswerListArr);
         $("body").css('background-image', '');
@@ -286,7 +311,7 @@ var questionFive = function(){
       if(days.match(numbers))
       {
       userInputDays = days;
-      userAnswerListArr.push(userInputDays);
+      userAnswerListArr.splice(4, 1, userInputDays);
       $("#mainContent").empty();
       changeQuestion(5);
       return true;
@@ -308,7 +333,7 @@ var questionSix = function(){
       if(budget.match(numbers))
       {
       userInputBudget = budget;
-      userAnswerListArr.push(userInputBudget);
+      userAnswerListArr.splice(5, 1, userInputBudget);
       $("#mainContent").empty();
       changeQuestion(6);
       return true;
@@ -338,6 +363,7 @@ var footerMaker= function (){
 
 setTimeout(makeBackBone, 1000);
 setTimeout(changeQuestion, 1200, htmlIndex);
+goBackBtn();
 
 
 
