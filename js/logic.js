@@ -141,7 +141,7 @@ var listGenerator = function(){
 
 
 var changeQuestion = function(index){
-
+  localStorage.setItem("userAnswerListArr", JSON.stringify(userAnswerListArr));
   $("#sideContent").empty();
   listGenerator();
   $("#mainContent").html(mainContentHtml[index]);
@@ -206,8 +206,9 @@ var questionOne = function(){
     console.log(userInputDomestic);
     $("#mainContent").empty();
     userAnswerListArr.splice(0, 1, this.id);
+
+    localStorage.setItem("userInputDomestic", userInputDomestic);
     changeQuestion(1);
-    addToUserItem(itemDomestic);
   });
 }
 
@@ -237,9 +238,10 @@ var questionTwo = function(){
     userInputRegion=this.id;
     console.log(userInputRegion);
     userAnswerListArr.splice(1, 1, this.id);
-    changeQuestion(2);
     console.log(userAnswerListArr);
     addToUserItem(region);
+    localStorage.setItem("userInputRegion", userInputRegion);
+    changeQuestion(2);
   })
 }
 
@@ -252,6 +254,7 @@ var questionThree = function() {
         changeQuestion(3);
         console.log(userAnswerListArr);
         addToUserItem(businessItem);
+        localStorage.setItem("userInputTravelType", userInputTravelType);
   })
   $("#Leisure").on("click", function () {
       // function to add items to list
@@ -261,6 +264,7 @@ var questionThree = function() {
         changeQuestion(3);
         console.log(userAnswerListArr);
         addToUserItem(leisureItem);
+        localStorage.setItem("userInputTravelType", userInputTravelType);
   })
 }
 
@@ -283,43 +287,50 @@ var questionFour = function(){
     })
     $("#Spring").on("click", function() {
         // function to add items to list
-        userInputTravelType="spring";
-        console.log(userInputTravelType);
+        userInputSeason="spring";
+
         userAnswerListArr.splice(3, 1, this.id);
-        changeQuestion(4);
+
         console.log(userAnswerListArr);
         $("body").css('background-image', '');
         addToUserItem(springItem);
+        localStorage.setItem("userInputSeason", userInputSeason);
+        changeQuestion(4);
     })
     $("#Summer").on("click", function() {
         // function to add items to list
-        userInputTravelType="summer";
-        console.log(userInputTravelType);
+        userInputSeason="summer";
+
         userAnswerListArr.splice(3, 1, this.id);
-        changeQuestion(4);
+
         console.log(userAnswerListArr);
         $("body").css('background-image', '');
         addToUserItem(summerItem);
+        localStorage.setItem("userInputSeason", userInputSeason);
+        changeQuestion(4);
     })
     $("#Fall").on("click", function() {
         // function to add items to list
-        userInputTravelType="fall";
-        console.log(userInputTravelType);
+        userInputSeason="fall";
+
         userAnswerListArr.splice(3, 1, this.id);
-        changeQuestion(4);
+
         console.log(userAnswerListArr);
         $("body").css('background-image', '');
         addToUserItem(fallItem);
+        localStorage.setItem("userInputSeason", userInputSeason);
+        changeQuestion(4);
     })
     $("#Winter").on("click", function() {
         // function to add items to list
-        userInputTravelType="winter";
-        console.log(userInputTravelType);
+        userInputSeason="winter";
+
         userAnswerListArr.splice(3, 1, this.id);
-        changeQuestion(4);
         console.log(userAnswerListArr);
         $("body").css('background-image', '');
         addToUserItem(winterItem);
+        localStorage.setItem("userInputSeason", userInputSeason);
+        changeQuestion(4);
     })
 }
 
@@ -332,6 +343,7 @@ var questionFive = function(){
       {
       userInputDays = days;
       userAnswerListArr.splice(4, 1, userInputDays);
+      localStorage.setItem("userInputDays", userInputDays);
       $("#mainContent").empty();
       changeQuestion(5);
       return true;
@@ -373,6 +385,7 @@ var questionSeven = function() {
         userInputGender="male";
         console.log(userInputGender);
         userAnswerListArr.push(this.id);
+        localStorage.setItem("userInputGender", userInputGender);
         changeQuestion(7);
         console.log(userAnswerListArr);
   })
@@ -381,6 +394,7 @@ var questionSeven = function() {
         userInputGender="female";
         console.log(userInputGender);
         userAnswerListArr.push(this.id);
+        localStorage.setItem("userInputGender", userInputGender);
         changeQuestion(7);
         console.log(userAnswerListArr);
   })
@@ -392,6 +406,7 @@ var questionEight = function() {
         userInputChild="kids";
         console.log(userInputChild);
         userAnswerListArr.push(this.id);
+        localStorage.setItem("userInputChild", userInputChild);
         changeQuestion(8);
         console.log(userAnswerListArr);
   })
@@ -400,6 +415,7 @@ var questionEight = function() {
         userInputChild="no-kids";
         console.log(userInputChild);
         userAnswerListArr.push(this.id);
+        localStorage.setItem("userInputChild", userInputChild);
         changeQuestion(8);
         console.log(userAnswerListArr);
   })
@@ -412,6 +428,7 @@ var questionNine = function() {
         userInputPets="pets";
         console.log(userInputPets);
         userAnswerListArr.push(this.id);
+        localStorage.clear();
         changeQuestion(9);
         console.log(userAnswerListArr);
   })
@@ -420,6 +437,7 @@ var questionNine = function() {
         userInputPets="no-pets";
         console.log(userInputPets);
         userAnswerListArr.push(this.id);
+        localStorage.clear();
         changeQuestion(9);
         console.log(userAnswerListArr);
   })
@@ -443,11 +461,71 @@ var footerMaker= function (){
 }
 
 
-setTimeout(makeBackBone, 1000);
-setTimeout(changeQuestion, 1200, htmlIndex);
-goBackBtn();
 
+var localStorageSave = function(){
+  if (localStorage.getItem("userInputDomestic")) {
+    var questionGoBack = confirm("There is unfinished work do you want to go back to where u left off?");
+    if (questionGoBack) {
+      makeBackBone();
+      var retrievedData= localStorage.getItem("userAnswerListArr");
+      userAnswerListArr = JSON.parse(retrievedData);
+      if (localStorage.getItem("userInputChild")) {
+        userInputDomestic = localStorage.getItem("userInputDomestic");
+        userInputRegion = localStorage.getItem("userInputRegion");
+        userInputTravelType = localStorage.getItem("userInputTravelType");
+        userInputSeason = localStorage.getItem("userInputSeason");
+        userInputDays = localStorage.getItem("userInputDays");
+        userInputBudget = localStorage.getItem("userInputBudget");
+        userInputGender = localStorage.getItem("userInputGender");
+        changeQuestion(7);
+      }else if (localStorage.getItem("userInputGender")) {
+        userInputDomestic = localStorage.getItem("userInputDomestic");
+        userInputRegion = localStorage.getItem("userInputRegion");
+        userInputTravelType = localStorage.getItem("userInputTravelType");
+        userInputSeason = localStorage.getItem("userInputSeason");
+        userInputDays = localStorage.getItem("userInputDays");
+        userInputBudget = localStorage.getItem("userInputBudget");
+        changeQuestion(6);
+      }else if (localStorage.getItem("userInputBudget")) {
+        userInputDomestic = localStorage.getItem("userInputDomestic");
+        userInputRegion = localStorage.getItem("userInputRegion");
+        userInputTravelType = localStorage.getItem("userInputTravelType");
+        userInputSeason = localStorage.getItem("userInputSeason");
+        userInputDays = localStorage.getItem("userInputDays");
+        changeQuestion(5);
+      }else if (localStorage.getItem("userInputDays")) {
+        userInputDomestic = localStorage.getItem("userInputDomestic");
+        userInputRegion = localStorage.getItem("userInputRegion");
+        userInputTravelType = localStorage.getItem("userInputTravelType");
+        userInputSeason = localStorage.getItem("userInputSeason");
+        changeQuestion(4);
+      }else if (localStorage.getItem("userInputSeason")) {
+        userInputDomestic = localStorage.getItem("userInputDomestic");
+        userInputRegion = localStorage.getItem("userInputRegion");
+        userInputTravelType = localStorage.getItem("userInputTravelType");
+        changeQuestion(3);
+      }else if (localStorage.getItem("userInputTravelType")) {
+        userInputDomestic = localStorage.getItem("userInputDomestic");
+        userInputRegion = localStorage.getItem("userInputRegion");
+        console.log("working")
+        changeQuestion(2);
+      }else if (localStorage.getItem("userInputRegion")) {
+        userInputDomestic = localStorage.getItem("userInputDomestic");
+        changeQuestion(1);
+      }else{
+        console.log("error in localStorageSave function")
+      }
 
-
+    }else{
+      localStorage.clear();
+      setTimeout(makeBackBone, 1000);
+      setTimeout(changeQuestion, 1200, htmlIndex);
+    }
+  }else{
+    setTimeout(makeBackBone, 1000);
+    setTimeout(changeQuestion, 1200, htmlIndex);
+  }
+}
+localStorageSave();
 
 });
