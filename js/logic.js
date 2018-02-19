@@ -384,7 +384,7 @@ var questionSeven = function() {
       // function to add items to list
         userInputGender="male";
         console.log(userInputGender);
-        userAnswerListArr.push(this.id);
+        userAnswerListArr.splice(6, 1, this.id);
         localStorage.setItem("userInputGender", userInputGender);
         changeQuestion(7);
         console.log(userAnswerListArr);
@@ -393,7 +393,7 @@ var questionSeven = function() {
       // function to add items to list
         userInputGender="female";
         console.log(userInputGender);
-        userAnswerListArr.push(this.id);
+        userAnswerListArr.splice(6, 1, this.id);
         localStorage.setItem("userInputGender", userInputGender);
         changeQuestion(7);
         console.log(userAnswerListArr);
@@ -405,7 +405,7 @@ var questionEight = function() {
       // function to add items to list
         userInputChild="kids";
         console.log(userInputChild);
-        userAnswerListArr.push(this.id);
+        userAnswerListArr.splice(7, 1, this.id);
         localStorage.setItem("userInputChild", userInputChild);
         changeQuestion(8);
         console.log(userAnswerListArr);
@@ -414,7 +414,7 @@ var questionEight = function() {
       // function to add items to list
         userInputChild="no-kids";
         console.log(userInputChild);
-        userAnswerListArr.push(this.id);
+        userAnswerListArr.splice(7, 1, this.id);
         localStorage.setItem("userInputChild", userInputChild);
         changeQuestion(8);
         console.log(userAnswerListArr);
@@ -427,7 +427,7 @@ var questionNine = function() {
       // function to add items to list
         userInputPets="pets";
         console.log(userInputPets);
-        userAnswerListArr.push(this.id);
+        userAnswerListArr.splice(8, 1,this.id);
         localStorage.clear();
         changeQuestion(9);
         console.log(userAnswerListArr);
@@ -436,7 +436,7 @@ var questionNine = function() {
       // function to add items to list
         userInputPets="no-pets";
         console.log(userInputPets);
-        userAnswerListArr.push(this.id);
+        userAnswerListArr.splice(8, 1,this.id);
         localStorage.clear();
         changeQuestion(9);
         console.log(userAnswerListArr);
