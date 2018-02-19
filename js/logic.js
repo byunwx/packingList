@@ -95,6 +95,11 @@ var goBackBtn = function (){
       changeQuestion(5);
     }else if(this.id== "6ListBar"){
       changeQuestion(6);
+    }
+    else if(this.id== "7ListBar"){
+      changeQuestion(7);
+    }else if(this.id== "8ListBar"){
+      changeQuestion(8);
     }else{
       return;
     }
