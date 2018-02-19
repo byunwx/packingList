@@ -5,11 +5,11 @@ var mainContentHtml= ["<div class='col l6'><div class='questionOnebox circle' id
 
  "<div class='col l6'><img class='questionThreeImg' id='Business' src='https://png.icons8.com/metro/1600/business.png' alt='Business'><p class='questionThreeText'>Business</p></div><div class='col l6'><img class='questionThreeImg' id='Leisure' src='https://cdn3.iconfinder.com/data/icons/abstract-1/512/leisure_A-128.png' alt='Leisure'><p class='questionThreeText'>Leisure</p></div>",
 
-"<div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Spring' src='http://icons.iconarchive.com/icons/icons8/windows-8/256/Astrology-Spring-icon.png' alt='String'></div><div class='col m2'><p>Spring</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class ='questionFour' id='Summer' src='http://icons.iconarchive.com/icons/icons8/windows-8/256/Astrology-Summer-icon.png' alt='Summer'></div><div class='col m2'><p>Summer</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Fall' src='http://icons.iconarchive.com/icons/icons8/windows-8/256/Astrology-Autumn-icon.png' alt='Fall'></div><div class='col m2'><p>Fall</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Winter' src='http://icons.iconarchive.com/icons/icons8/windows-8/256/Astrology-Winter-icon.png' alt='Winter'></div><div class='col m2'><p>Winter</p></div></div></div>",
+ "<div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Spring' src='https://media.giphy.com/media/l4hLSoxh3bZOvrn0c/giphy.gif' alt='String'></div><div class='col m2'><p>Spring</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class ='questionFour' id='Summer' src='https://media.giphy.com/media/12G7BxUHSMM2TC/giphy.gif' alt='Summer'></div><div class='col m2'><p>Summer</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Fall' src='https://media.giphy.com/media/UxTZDNv0Zej4s/giphy.gif' alt='Fall'></div><div class='col m2'><p>Fall</p></div></div></div><div class='divider'></div><div class='section' id='winterBackground'><div class='row'><div class='col m2'><img class='questionFour' id='Winter' src='https://media.giphy.com/media/OWxrxRHY6afRu/giphy.gif' alt='Winter'></div><div class='col m2'><p>Winter</p></div></div></div>",
 
-  "<form class='col s9 questionFive' id='mainContent'><div class='row-center'><div class='input-field col s6 offset-s3'><input id='daysStaying' type='text' class='validate'><label class='active' for='daysStaying'> Enter number of days</label></div></div><button class='btn waves-effect waves-light' id='questionFiveButton' type='submit' name='action'>Submit</button></form>",
+"<form class='col s9 questionFive' id='mainContent'><div class='row-center'><div class='input-field col s6 offset-s3'><input id='daysStaying' type='text' class='validate'><label class='active' for='daysStaying'> Enter number of days</label></div></div><button class='btn waves-effect waves-light' id='questionFiveButton' type='submit' name='action'>Submit</button></form>",
 
-  "<form class='col s9 questionSix' id='mainContent'><div class='row-center'><div class='input-field col s6 offset-s3'><input id='userBudget' type='text' class='validate'><label class='active' for='budget'> Enter budget</label></div></div><button class='btn waves-effect waves-light' id='questionSixButton' type='submit' name='action'>Submit</button></form>"];
+"<form class='col s9 questionSix' id='mainContent'><div class='row-center'><div class='input-field col s6 offset-s3'><input id='userBudget' type='text' class='validate'><label class='active' for='budget'> Enter budget</label></div></div><button class='btn waves-effect waves-light' id='questionSixButton' type='submit' name='action'>Submit</button></form>"];
 
 var questionPromptArr=["Will you be traveling domestically or internationally?", "Select the region you will be traveling to.", "Are you traveling on business or for leisure?", "When will you be traveling?", "How many days will you be staying?", "What is your budget for this trip?", "Tell us about yourself."];
 
@@ -36,6 +36,33 @@ var iconArr=["flight", "map", "business_center", "wb_sunny", "schedule", "attach
 // var saveUserItem = function(){
 //   localStorage.setItem("userItem", userItem);
 // }
+
+var basicNeeds=[];
+var domesticItem=[];
+var usaWestItem=["test1"];
+var usaMidwestItem=["test2"];
+var usaNortheastItem=["test3"];
+var usaSouthwestItem=["test4"];
+var usaSoutheastItem=["test5"];
+var leisureItem=[];
+var businessItem=[];
+var springItem=["Light Clothes", "Medication", "Umbrella"];
+var summerItem=[];
+var fallItem=["Sweater", "Light Jacket", "Boots", "Jeans", "Umbrella", "Medication"];
+var winterItem=["Sweater", "Gloves", "Warm Hat", "Snow Boots", "Chapstick", "Jacket"];
+var userItem=[basicNeeds];
+
+var addToUserItem= function(arr){
+  for (var i = 0; i < arr.length; i++) {
+    userItem.push(arr[i]);
+  }
+  saveUserItem();
+}
+
+var saveUserItem = function(){
+  localStorage.setItem("userItem", userItem);
+}
+
 var makeBackBone = function (){
   $("body").empty()
   $("body").html("<nav><div class='nav-wrapper'><a href=''#!'' class='brand-logo'>Logo</a><span id='questionPrompt'>center mecenter mecenter mecenter mecenter mecenter mecenter me</span><ul class='right hide-on-med-and-down'><li><a href=''></a></li></ul></div></nav><div class='container' id='contentSectionId'><div class='row'><div class='col l9' id='mainContent'></div><div class='col l3' id='sideContent'></div></div></div><footer class='page-footer'><div class='container'><div class='row'><div class='col l12'><h5 class='white-text' id='footerContent'>Footer Content</h5></div></div></div></footer>");
@@ -135,24 +162,31 @@ var questionOne = function(){
     $("#mainContent").empty();
     userAnswerListArr.push(this.id);
     changeQuestion(1);
+    addToUserItem(itemDomestic);
   });
 }
 
 var questionTwo = function(){
+  var region;
   $("#usaWest").hover(function(){
     $("#usaMap").css('background-image', 'url(./images/map/usaRegion1.png)');
+    region = usaWestItem;
   })
   $("#usaMidwest").hover(function(){
     $("#usaMap").css('background-image', 'url(./images/map/usaRegion2.png)');
+    region = usaMidwestItem;
   })
   $("#usaNortheast").hover(function(){
     $("#usaMap").css('background-image', 'url(./images/map/usaRegion3.png)');
+    region = usaNortheastItem;
   })
   $("#usaSouthwest").hover(function(){
     $("#usaMap").css('background-image', 'url(./images/map/usaRegion4.png)');
+    region = usaSouthwestItem;
   })
   $("#usaSoutheast").hover(function(){
     $("#usaMap").css('background-image', 'url(./images/map/usaRegion5.png)');
+    region = usaSoutheastItem;
   })
   $(".questionTwo").on("click", function(){
     userInputRegion=this.id;
@@ -160,6 +194,7 @@ var questionTwo = function(){
     userAnswerListArr.push(this.id);
     changeQuestion(2);
     console.log(userAnswerListArr);
+    addToUserItem(region);
   })
 }
 
@@ -171,6 +206,7 @@ var questionThree = function() {
         userAnswerListArr.push(this.id);
         changeQuestion(3);
         console.log(userAnswerListArr);
+        addToUserItem(businessItem);
   })
   $("#Leisure").on("click", function () {
       // function to add items to list
@@ -179,10 +215,27 @@ var questionThree = function() {
         userAnswerListArr.push(this.id);
         changeQuestion(3);
         console.log(userAnswerListArr);
+        addToUserItem(leisureItem);
   })
 }
 
 var questionFour = function(){
+    $("#Spring").hover(
+      function() {$("body").css({'background-image': 'url(https://media.giphy.com/media/l4hLSoxh3bZOvrn0c/giphy.gif)','background-size': 'cover','background-repeat': 'no-repeat'});}, 
+      function() {$("body").css('background-image', '');
+    })
+    $("#Summer").hover(
+      function() {$("body").css({'background-image': 'url(https://media.giphy.com/media/12G7BxUHSMM2TC/giphy.gif)','background-size': 'cover','background-repeat': 'no-repeat'});}, 
+      function() {$("body").css('background-image', '');
+    })
+    $("#Fall").hover(
+      function() {$("body").css({'background-image': 'url(https://media.giphy.com/media/UxTZDNv0Zej4s/giphy.gif)','background-size': 'cover','background-repeat': 'no-repeat'});}, 
+      function() {$("body").css('background-image', '');
+    })
+    $("#Winter").hover(
+      function() {$("body").css({'background-image': 'url(https://media.giphy.com/media/OWxrxRHY6afRu/giphy.gif)','background-size': 'cover','background-repeat': 'no-repeat'});}, 
+      function() {$("body").css('background-image', '');
+    })
     $("#Spring").on("click", function() {
         // function to add items to list
         userInputTravelType="spring";
@@ -190,6 +243,8 @@ var questionFour = function(){
         userAnswerListArr.push(this.id);
         changeQuestion(4);
         console.log(userAnswerListArr);
+        $("body").css('background-image', '');
+        addToUserItem(springItem);
     })
     $("#Summer").on("click", function() {
         // function to add items to list
@@ -198,6 +253,8 @@ var questionFour = function(){
         userAnswerListArr.push(this.id);
         changeQuestion(4);
         console.log(userAnswerListArr);
+        $("body").css('background-image', '');
+        addToUserItem(summerItem);
     })
     $("#Fall").on("click", function() {
         // function to add items to list
@@ -206,6 +263,8 @@ var questionFour = function(){
         userAnswerListArr.push(this.id);
         changeQuestion(4);
         console.log(userAnswerListArr);
+        $("body").css('background-image', '');
+        addToUserItem(fallItem);
     })
     $("#Winter").on("click", function() {
         // function to add items to list
@@ -214,6 +273,8 @@ var questionFour = function(){
         userAnswerListArr.push(this.id);
         changeQuestion(4);
         console.log(userAnswerListArr);
+        $("body").css('background-image', '');
+        addToUserItem(winterItem);
     })
 }
 
