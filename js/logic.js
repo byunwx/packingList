@@ -9,9 +9,17 @@ var mainContentHtml= ["<div class='col l6'><div class='questionOnebox circle' id
 
   "<form class='col s9 questionFive' id='mainContent'><div class='row-center'><div class='input-field col s6 offset-s3'><input id='daysStaying' type='text' class='validate'><label class='active' for='daysStaying'> Enter number of days</label></div></div><button class='btn waves-effect waves-light' id='questionFiveButton' type='submit' name='action'>Submit</button></form>",
 
-  "<form class='col s9 questionSix' id='mainContent'><div class='row-center'><div class='input-field col s6 offset-s3'><input id='userBudget' type='text' class='validate'><label class='active' for='budget'> Enter budget</label></div></div><button class='btn waves-effect waves-light' id='questionSixButton' type='submit' name='action'>Submit</button></form>"];
+  "<form class='col s9 questionSix' id='mainContent'><div class='row-center'><div class='input-field col s6 offset-s3'><input id='userBudget' type='text' class='validate'><label class='active' for='budget'> Enter budget</label></div></div><button class='btn waves-effect waves-light' id='questionSixButton' type='submit' name='action'>Submit</button></form>",
 
-var questionPromptArr=["Will you be traveling domestically or internationally?", "Select the region you will be traveling to.", "Are you traveling on business or for leisure?", "When will you be traveling?", "How many days will you be staying?", "What is your budget for this trip?", "Tell us about yourself."];
+ "<div class='col l6'><img class='questionThreeImg' id='male' src='./images/man.png' height={{500px}} width={{500px}} alt='male'><p class='questionThreeText'>Male</p></div><div class='col l6'><img class='questionThreeImg' id='female'  src='./images/woman.png' height={{500px}} width={{500px}} alt='Female'><p class='questionThreeText'>Female</p></div>",
+
+  "<div class='col l6'><img class='questionThreeImg' id='kids' src='./images/kids.png' height={{500px}} width={{500px}} alt='kids'><p class='questionThreeText'>Kids</p></div><div class='col l6'><img class='questionThreeImg' id='no-kids'  src='./images/no-kids.png' height={{500px}} width={{500px}} alt='no-kids'><p class='questionThreeText'>No-Kids</p></div>",
+
+
+    "<div class='col l6'><img class='questionThreeImg' id='pets' src='./images/pets.png' height={{500px}} width={{500px}} alt='pets'><p class='questionThreeText'>Pets</p></div><div class='col l6'><img class='questionThreeImg' id='no-pets'  src='./images/no-pets.png' height={{500px}} width={{500px}} alt='no-pets'><p class='questionThreeText'>No-Pets</p></div>",
+];
+
+var questionPromptArr=["Will you be traveling domestically or internationally?", "Select the region you will be traveling to.", "Are you traveling on business or for leisure?", "When will you be traveling?", "How many days will you be staying?", "What is your budget for this trip?", "Tell us about yourself.", "Do you have Kids or no?t", "Do you keep pets or not?", "That's all for now! :)"];
 
 var htmlIndex=0;
 var userInputDomestic
@@ -24,7 +32,7 @@ var userInputGender
 var userInputChild
 var userInputPets
 var userAnswerListArr=[];
-var iconArr=["flight", "map", "business_center", "wb_sunny", "schedule", "attach_money", "wc"];
+
 // var userItem=[];
 //
 // var addToUserItem= function(arr)={
@@ -56,7 +64,7 @@ var listGenerator = function(){
     // }else{
     //   console.log("no arr in list Bar")
     // }
-    var l=iconArr[i];
+    var l=i+1;
 
     console.log("listGenerator")
     if (userAnswerListArr.length >0) {
@@ -75,7 +83,6 @@ var listGenerator = function(){
 
 
 var changeQuestion = function(index){
-  footerMaker();
   $("#sideContent").empty();
   listGenerator();
   console.log(mainContentHtml[index]);
@@ -96,6 +103,12 @@ var changeQuestion = function(index){
     questionFive();
   }else if (index==5){
     questionSix();
+  }else if (index==6){
+    questionSeven();
+  }else if (index==7){
+    questionEight();
+  }else if (index==8){
+    questionNine();
   }else{
     console.log("error at ChangeQuestion");
   }
@@ -259,21 +272,65 @@ var questionSix = function(){
       console.log(budget);
   })
 }
-var footerMaker= function (){
-  $("#footerContent").empty();
-  for (var i = 0; i < iconArr.length; i++) {
-    var l= iconArr[i];
-    var newSpan=document.createElement("span");
 
-    if (i==htmlIndex) {
-      newSpan.innerHTML="<i class='material-icons' id='blackIcon'>"+l+"</i>";
-      $("#footerContent").append(newSpan);
-    }else{
-      newSpan.innerHTML="<i class='material-icons'>"+l+"</i>";
-      $("#footerContent").append(newSpan);
-    }
-  }
+var questionSeven = function() {
+  $("#male").on("click", function () {
+      // function to add items to list
+        userInputGender="male";
+        console.log(userInputGender);
+        userAnswerListArr.push(this.id);
+        changeQuestion(7);
+        console.log(userAnswerListArr);
+  })
+  $("#female").on("click", function () {
+      // function to add items to list
+        userInputGender="female";
+        console.log(userInputGender);
+        userAnswerListArr.push(this.id);
+        changeQuestion(7);
+        console.log(userAnswerListArr);
+  })
 }
+
+var questionEight = function() {
+  $("#kids").on("click", function () {
+      // function to add items to list
+        userInputChild="kids";
+        console.log(userInputChild);
+        userAnswerListArr.push(this.id);
+        changeQuestion(8);
+        console.log(userAnswerListArr);
+  })
+  $("#no-kids").on("click", function () {
+      // function to add items to list
+        userInputChild="no-kids";
+        console.log(userInputChild);
+        userAnswerListArr.push(this.id);
+        changeQuestion(8);
+        console.log(userAnswerListArr);
+  })
+}
+
+
+var questionNine = function() {
+  $("#pets").on("click", function () {
+      // function to add items to list
+        userInputPets="pets";
+        console.log(userInputPets);
+        userAnswerListArr.push(this.id);
+        changeQuestion(9);
+        console.log(userAnswerListArr);
+  })
+  $("#no-pets").on("click", function () {
+      // function to add items to list
+        userInputPets="no-pets";
+        console.log(userInputPets);
+        userAnswerListArr.push(this.id);
+        changeQuestion(9);
+        console.log(userAnswerListArr);
+  })
+}
+
 
 setTimeout(makeBackBone, 1000);
 setTimeout(changeQuestion, 1200, htmlIndex);
