@@ -597,6 +597,7 @@ var userOutput = function(){
 
   tipsOutputSection();
   budgetOutPutSection();
+  listOutput();
 //end user output function
 };
 
