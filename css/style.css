@@ -18,6 +18,11 @@
   background-image: url("../images/packstill.png");
   background-color: white;
 }
+
+.nav-new-color {
+  background-color: #3d85ab!important;
+}
+
 #contentSectionId{
   margin-bottom: 100px;
 }
@@ -36,7 +41,7 @@ html{
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: red;
+    background-color: #65a5cb;
     color: white;
     text-align: center;
 }
