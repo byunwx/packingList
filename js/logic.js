@@ -697,6 +697,7 @@ var localStorageSave = function(){
         userInputDomestic = localStorage.getItem("userInputDomestic");
         changeQuestion(1);
       }else{
+        changeQuestion(0);
         console.log("error in localStorageSave function")
       }
 
