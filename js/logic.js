@@ -204,7 +204,11 @@ var changeQuestion = function(index){
   footerMaker();
   console.log(userAnswerListArr);
 }
-
+var listOutput = function() {
+  for (var i = 0; i < userItem.length; i++) {
+      $("#theListOutPut").append("<li>" + userItem[i].toUpperCase() + "</li>");
+  }
+}
 
 var questionPromptGenerator = function (index){
   $("#questionPrompt").text(questionPromptArr[index]);
@@ -236,7 +240,7 @@ var questionOne = function(){
     console.log(userInputDomestic);
     $("#mainContent").empty();
     userAnswerListArr.splice(0, 1, this.id);
-    choice1=domesticItem;
+
     localStorage.setItem("userInputDomestic", userInputDomestic);
     changeQuestion(1);
   });
@@ -510,52 +514,68 @@ var questionNine = function() {
 //USER OUTPUT FUNCTION
 var userOutput = function(){
   localStorage.clear();
+  choice1=domesticItem;
   $("#questionPrompt").empty();
   $("#questionPrompt").text("Here's what we have for you");
   // $("#mainContent").velocity("scroll", { container: $("#container") }); this is wrong u have to fix it
   if (userInputRegion=="usaSoutheast") {
     $("#regionName").prepend("<h2>Southeast</h2>");
+    choice2=usaSoutheastItem;
   }else
   if (userInputRegion=="usaSouthwest") {
     $("#regionName").prepend("<h2>SouthWest</h2>");
+    choice2=usaSouthwestItem;
   }else
   if (userInputRegion=="#usaMidwest") {
     $("#regionName").prepend("<h2>Midwest</h2>");
+    choice2=usaMidwestItem;
   }else
   if (userInputRegion=="usaWest") {
     $("#regionName").prepend("<h2>West</h2>");
+    choice2=usaWestItem;
   }else
   if (userInputRegion=="usaNortheast") {
     $("#regionName").prepend("<h2>Northeast</h2>");
+    choice2=usaNortheastItem;
   }else{
     console.log("error on userOutput title")
   }
 
   if (userInputTravelType =='business'){
       $('#ouputTravelType').prepend("<img src='./images/output-business.png'/>");
+      choice3= businessItem;
   } else {
       $("#ouputTravelType").prepend("<img src='./images/output-leisure.png'/>");
+      choice3=leisureItem;
     }
-
-
+    if (userInputGender=="male") {
+      choice7=maleItem;
+    }else if (userInputGender=="female"){
+      choice7=femaleItem;
+    }
+    if(userInputChild=="kids"){
+      choice8=kidsItem;
+    }
+    if(userInputPets=="pets"){
+      choice9=petsItem;
+    }
     if (userInputSeason=="spring") {
     $("#outputSeason").prepend("<img src='images/output-spring.png'/>");
+    choice4=springItem;
     }else
     if (userInputSeason=="summer") {
     $("#outputSeason").prepend("<img src='images/output-summer.png'/>");
+    choice4=summerItem;
     }else
     if (userInputSeason=="fall") {
     $("#outputSeason").prepend("<img src='images/output-fall.png'/>");
+    choice4=fallItem;
     }else
     if (userInputSeason=="winter") {
     $("#outputSeason").prepend("<img src='images/output-winter.png'/>");
+    choice4=winterItem;
     }
 
-    var listOutput = function() {
-      for (var i = 0; i < userItem.length; i++) {
-          $("#theListOutPut").append("<li>" + userItem[i].toUpperCase() + "</li>");
-      }
-  }
 
   var budgetOutPutSection = function (){
   var budgetPerDay= (Math.round(100*userInputBudget/userInputDays)/100)+"per day";
@@ -605,7 +625,7 @@ var userOutput = function(){
   budgetOutPutSection();
   combineUserItem();
   listOutput();
-  
+
   console.log(userItem);
 //end user output function
 };
