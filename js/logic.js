@@ -45,23 +45,23 @@ var iconArr=["flight", "map", "business_center", "wb_sunny", "schedule", "attach
 //   localStorage.setItem("userItem", userItem);
 // }
 
-var basicNeeds=["toothbrush and toothpaste", "cell phone", "chargers", "travel pillow", "navigation/ travel app", "shampoo/conditioner", "emergency contact info", "rental car info", "hotel infomation", "cash", "credit card", "identification", "camera", "sleepwear", "underwear", "socks"];
-var domesticItem=[];
-var usaWestItem=[];
-var usaMidwestItem=[];
-var usaNortheastItem=[];
-var usaSouthwestItem=[];
-var usaSoutheastItem=[];
-var leisureItem=[];
-var businessItem=["dress shoes", "suits", "dress shirts", "belt"];
+var basicNeeds=["Toothbrush", "Toothpaste", "Chargers", "Travel app", "emergency contact info", "Rental car info", "Hotel infomation", "Cash", "Credit card", "ID", "Sleepwear", "Undergarments"];
+var domesticItem=["Passport", "Travel pillow"];
+var usaWestItem=["Sunglasses", "Coffee maker"];
+var usaMidwestItem=["Cardigan", "Map"];
+var usaNortheastItem=["Cardigan"];
+var usaSouthwestItem=["Sunglasses"];
+var usaSoutheastItem=["Sunglasses", "Mini-fan", "Bug spray"];
+var leisureItem=["Camera", "Notebook"];
+var businessItem=["Dress shoes", "Suits/suitdresses", "Dress shirts", "Belt", "Wristwatch"];
 var springItem=["Light Clothes", "Medication", "Umbrella"];
-var summerItem=["sunglasses", "glasses case", "hat", "sunscreen", "t-shirts", "shorts", "flip-flop/sandals"];
-var fallItem=["Sweater", "Light Jacket", "Boots", "Jeans", "Umbrella", "Medication"];
-var winterItem=["Sweater", "Gloves", "Warm Hat", "Snow Boots", "Chapstick", "Jacket"];
-var maleItem=["tie", "shaving razor"];
-var femaleItem=["makeups", "skincare", "Toiletries"];
-var kidsItem=["diapers", "kids clothes"];
-var petsItem=["leash", "pet food", "pet toy", "pet carrier"];
+var summerItem=["Sunglasses", "Cap", "Sunscreen", "T-shirts", "Bathing suit", "Flip flops/sandals"];
+var fallItem=["Sweater", "Light Jacket", "Boots", "Umbrella", "Medication", "Beanie"];
+var winterItem=["Coat", "Sweater", "Scarf", "Gloves", "Warm Hat", "Snow Boots", "Chapstick", "Cold Medicine"];
+var maleItem=["Tie", "Shaving cream", "Razor"];
+var femaleItem=["Makeup", "Skincare", "Toiletries"];
+var kidsItem=["Chidlren's clothes", "Toys", "Coloring books", "Snacks"];
+var petsItem=["Leash", "Pet food", "Toys", "Pet carrier"];
 var userItem=[];
 
 var choice1;
