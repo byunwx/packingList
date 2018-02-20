@@ -510,10 +510,9 @@ var userOutput = function(){
     console.log("error on userOutput title")
   }
 
-
-    if (userInputTravelType == 'business'){
-      $('#outputTravelType').prepend("<img src='./images/output-business.png'/>");
-    } else {
+  if (userInputTravelType =='business'){
+      $('#ouputTravelType').prepend("<img src='./images/output-business.png'/>");
+  } else {
       $("#ouputTravelType").prepend("<img src='./images/output-leisure.png'/>");
     }
 
@@ -531,9 +530,8 @@ var userOutput = function(){
     $("#outputSeason").prepend("<img src='images/output-winter.png'/>");
     }
 
-
   var budgetOutPutSection = function (){
-  var budgetPerDay= (userInputBudget/userInputDays)+"per day";
+  var budgetPerDay= (Math.round(100*userInputBudget/userInputDays)/100)+"per day";
   var titlebudget = "<h3>Budget</h3>";
   var totalbudget = $("<p></p>").text("$"+userInputBudget);
   var budgetperdaysection = $("<p></p>").text("$"+budgetPerDay);
