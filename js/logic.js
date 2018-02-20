@@ -713,7 +713,14 @@ var localStorageSave = function(){
 var btnPrintGenerator =function (){
   $("#theListOutPut").append("<br><a class='waves-effect waves-light btn' id='printBtn'>Print the List</a>")
   $("#printBtn").on("click", function(){
-   window.print();
+    var printContents = document.getElementById("mainContent").innerHTML;
+    var originalContents = document.body.innerHTML;
+
+    document.body.innerHTML = printContents;
+
+    window.print();
+
+    document.body.innerHTML = originalContents;
   })
 }
 localStorageSave();
