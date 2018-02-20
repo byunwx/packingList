@@ -400,6 +400,7 @@ var questionSix = function(){
       if(budget.match(numbers))
       {
       userInputBudget = budget;
+      localStorage.setItem("userInputBudget", userInputBudget);
       userAnswerListArr.splice(5, 1, userInputBudget);
       $("#mainContent").empty();
       changeQuestion(6);
@@ -502,7 +503,7 @@ var footerMaker= function (){
 
 var localStorageSave = function(){
   if (localStorage.getItem("userInputDomestic")) {
-    var questionGoBack = confirm("There is unfinished work do you want to go back to where u left off?");
+    var questionGoBack = confirm("There is unfinished work do you want to go back to where you left off?");
     if (questionGoBack) {
       makeBackBone();
       var retrievedData= localStorage.getItem("userAnswerListArr");
@@ -545,7 +546,7 @@ var localStorageSave = function(){
       }else if (localStorage.getItem("userInputTravelType")) {
         userInputDomestic = localStorage.getItem("userInputDomestic");
         userInputRegion = localStorage.getItem("userInputRegion");
-        console.log("working")
+
         changeQuestion(2);
       }else if (localStorage.getItem("userInputRegion")) {
         userInputDomestic = localStorage.getItem("userInputDomestic");
