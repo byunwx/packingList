@@ -103,3 +103,7 @@ html{
   height: 4rem;
   width: 4rem;
 }
+#theListOutPut{
+  text-align: center;
+  line-height: 25px;
+}
