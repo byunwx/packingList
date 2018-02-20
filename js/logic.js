@@ -394,12 +394,7 @@ var questionFive = function(){
       $("#mainContent").empty();
       changeQuestion(5);
       return true;
-      } else
-      if (days == "0"){
-        alert("That doesn't seem right. Let's try again.");
-        changeQuestion(4);
-      }else
-      {
+      } else{
       alert('Please input numeric characters only');
       return false;
       }
@@ -421,12 +416,7 @@ var questionSix = function(){
       $("#mainContent").empty();
       changeQuestion(6);
       return true;
-      } else
-      if (budget == "0"){
-        alert("That doesn't seem right. Let's try again.");
-        changeQuestion(5);
-      }else
-      {
+      } else{
       alert('Please input numeric characters only');
       return false;
       }
