@@ -328,7 +328,7 @@ var questionFour = function(){
         userAnswerListArr.splice(3, 1, this.id);
 
         console.log(userInputSeason);
-        userAnswerListArr.push(this.id);
+
         changeQuestion(4);
         console.log(userAnswerListArr);
         $("body").css('background-image', '');
@@ -343,7 +343,7 @@ var questionFour = function(){
         userAnswerListArr.splice(3, 1, this.id);
 
         console.log(userInputSeason);
-        userAnswerListArr.push(this.id);
+
         changeQuestion(4);
         console.log(userAnswerListArr);
         $("body").css('background-image', '');
@@ -371,7 +371,7 @@ var questionFour = function(){
 
         userAnswerListArr.splice(3, 1, this.id);
         console.log(userInputSeason);
-        userAnswerListArr.push(this.id);
+        
         changeQuestion(4);
         console.log(userAnswerListArr);
         $("body").css('background-image', '');
