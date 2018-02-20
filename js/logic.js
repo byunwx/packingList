@@ -19,7 +19,7 @@ var mainContentHtml= ["<div class='col l6'><div class='questionOnebox circle' id
 
 "<div class='row'><div class='col m12' id='mainContent'></div><div class='row center'><h2 class='header col s12' id='regionName'></h2></div></div></div><div class='row center-align' id='weatherType'></div><div class='row center-align'><div class='col m4'><div id='ouputTravelType'></div></div><div class='col m4'><div id='outputSeason'></div></div><div class='col m4'><div class='outputBudget'></div></div></div><div class='divider'></div><div class='row center'><div class='col s4' id='userOutputTip1Photo1'></div><div class='col s8 left-align' id='userOutputTip1'></div></div><div class='row center'><div class='col s4' id='userOutputTip2Photo2'></div><div class='col s8 left-align' id='userOutputTip2'></div></div><div class='row center'><div class='col s4' id='userOutputTip3Photo3'></div><div class='col s8 left-align' id='userOutputTip3'></div></div><div class='divider'></div><ul id='theListOutPut'></ul>"];
 
-var questionPromptArr=["Will you be traveling domestically or internationally?", "Select the region you will be traveling to.", "Are you traveling on business or for leisure?", "When will you be traveling?", "How many days will you be staying?", "What is your budget for this trip? (enter dollar amount)", "Tell us about yourself.", "Do you have Kids or no?t", "Do you keep pets or not?"];
+var questionPromptArr=["Will you be traveling domestically or internationally?", "Select the region you will be traveling to.", "Are you traveling on business or for leisure?", "When will you be traveling?", "How many days will you be staying?", "What is your budget for this trip? (enter dollar amount)", "Tell us about yourself.", "Do you have Kids or not?", "Do you keep pets or not?"];
 
 var htmlIndex=0;
 var userInputDomestic
@@ -577,7 +577,7 @@ var userOutput = function(){
 
 
   var budgetOutPutSection = function (){
-  var budgetPerDay= (Math.round(100*userInputBudget/userInputDays)/100)+"per day";
+  var budgetPerDay= (Math.round(100*userInputBudget/userInputDays)/100)+" per day";
   var titlebudget = "<h3>Budget</h3>";
   var totalbudget = $("<p></p>").text("Total: $"+userInputBudget);
   var budgetperdaysection = $("<p></p>").text("$"+budgetPerDay);
