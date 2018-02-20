@@ -504,6 +504,7 @@ var questionNine = function() {
 
 //USER OUTPUT FUNCTION
 var userOutput = function(){
+  localStorage.clear();
   $("#questionPrompt").empty();
   $("#questionPrompt").text("Here's what we have for you");
   // $("#mainContent").velocity("scroll", { container: $("#container") }); this is wrong u have to fix it
