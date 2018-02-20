@@ -581,6 +581,8 @@ var userOutput = function(){
     $("#userOutputTip1").html("<p>There is an amazing amount of National Historic Landmarks in this region of the US. In fact approximately half of these US landmarks are found in this region.</p>");
     $("#userOutputTip2").html("<p>New York City, which is located in the Northeast, has the highest population of any city in the US; its population exceeds that of most states.</p>");
     $("#userOutputTip3").html("<p>All 11 states in this region were part of original thirteen British colonies before the US won it's independence in the American Revolution.</p>");
+  }else {
+    console.log("error on tips in output slide");
   }
   // $("#userOutputTip1").text(tip1);
   // $("#userOutputTip2").text(tip2);
