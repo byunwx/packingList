@@ -536,7 +536,7 @@ var userOutput = function(){
   var budgetPerDay= (userInputBudget/userInputDays)+"per day";
   var titlebudget = "<h3>Budget</h3>";
   var totalbudget = $("<p></p>").text("$"+userInputBudget);
-  var budgetperdaysection = $("<p></p>").text("$"+budgetPerDay+"/day");
+  var budgetperdaysection = $("<p></p>").text("$"+budgetPerDay);
   $(".outputBudget").append(titlebudget, totalbudget, budgetperdaysection);
   }
 
