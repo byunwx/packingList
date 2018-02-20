@@ -533,7 +533,7 @@ var userOutput = function(){
   var budgetOutPutSection = function (){
   var budgetPerDay= (Math.round(100*userInputBudget/userInputDays)/100)+"per day";
   var titlebudget = "<h3>Budget</h3>";
-  var totalbudget = $("<p></p>").text("$"+userInputBudget);
+  var totalbudget = $("<p></p>").text("Total: $"+userInputBudget);
   var budgetperdaysection = $("<p></p>").text("$"+budgetPerDay);
   $(".outputBudget").append(titlebudget, totalbudget, budgetperdaysection);
   }
@@ -546,8 +546,9 @@ var userOutput = function(){
   $("#userOutputTip2").text(tip2);
   $("#userOutputTip3").text(tip3);
   }
+  
   tipsOutputSection();
-    budgetOutPutSection();
+  budgetOutPutSection();
 //end user output function
 };
 
