@@ -395,6 +395,10 @@ var questionFive = function(){
       changeQuestion(5);
       return true;
       } else
+      if (days == "0"){
+        alert("That doesn't seem right. Let's try again.");
+        changeQuestion(4);
+      }else
       {
       alert('Please input numeric characters only');
       return false;
@@ -418,7 +422,7 @@ var questionSix = function(){
       changeQuestion(6);
       return true;
       } else
-      if (number == "0"){
+      if (budget == "0"){
         alert("That doesn't seem right. Let's try again.");
         changeQuestion(5);
       }else
