@@ -17,7 +17,7 @@ var mainContentHtml= ["<div class='col l6'><div class='questionOnebox circle' id
 
 "<div class='col l6'><img class='questionThreeImg' id='pets' src='./images/pets.png' height={{500px}} width={{500px}} alt='pets'><p class='questionThreeText'>Pets</p></div><div class='col l6'><img class='questionThreeImg' id='no-pets'  src='./images/no-pets.png' height={{500px}} width={{500px}} alt='no-pets'><p class='questionThreeText'>No-Pets</p></div>",
 
-"<div class='row'><div class='col s12 output' id='mainContent'><div class='row center'><h2 class='header col s12' id='regionName'></h2></div></div></div><div class='row center-align' id='weatherType'></div><div class='row center-align'><div class='col m4'><div id='ouputTravelType'></div></div><div class='col m4'><div id='outputSeason'></div></div><div class='col m4'><div class='outputBudget'></div></div></div><div class='divider'></div><div class='row center'><div class='col s4' id='userOutputTip1Photo1'></div><div class='col s8 left-align' id='userOutputTip1'></div></div><div class='row center'><div class='col s4' id='userOutputTip2Photo2'></div><div class='col s8 left-align' id='userOutputTip2'></div></div><div class='row center'><div class='col s4' id='userOutputTip3Photo3'></div><div class='col s8 left-align' id='userOutputTip3'></div></div><div class='divider'></div><ul></ul>"];
+"<div class='row'><div class='col s12 output' id='mainContent'><div class='row center'><h2 class='header col s12' id='regionName'></h2></div></div></div><div class='row center-align' id='weatherType'></div><div class='row center-align'><div class='col m4'><div id='ouputTravelType'></div></div><div class='col m4'><div id='outputSeason'></div></div><div class='col m4'><div class='outputBudget'></div></div></div><div class='divider'></div><div class='row center'><div class='col s4' id='userOutputTip1Photo1'></div><div class='col s8 left-align' id='userOutputTip1'></div></div><div class='row center'><div class='col s4' id='userOutputTip2Photo2'></div><div class='col s8 left-align' id='userOutputTip2'></div></div><div class='row center'><div class='col s4' id='userOutputTip3Photo3'></div><div class='col s8 left-align' id='userOutputTip3'></div></div><div class='divider'></div><ul id='theListOutPut'></ul>"];
 
 var questionPromptArr=["Will you be traveling domestically or internationally?", "Select the region you will be traveling to.", "Are you traveling on business or for leisure?", "When will you be traveling?", "How many days will you be staying?", "What is your budget for this trip? (enter dollar amount)", "Tell us about yourself.", "Do you have Kids or no?t", "Do you keep pets or not?"];
 
@@ -45,23 +45,23 @@ var iconArr=["flight", "map", "business_center", "wb_sunny", "schedule", "attach
 //   localStorage.setItem("userItem", userItem);
 // }
 
-var basicNeeds=["toothbrush and toothpaste", "cell phone", "chargers", "travel pillow", "navigation/ travel app", "shampoo/conditioner", "emergency contact info", "rental car info", "hotel infomation", "cash", "credit card", "identification", "camera", "sleepwear", "underwear", "socks"];
-var domesticItem=[];
-var usaWestItem=[];
-var usaMidwestItem=[];
-var usaNortheastItem=[];
-var usaSouthwestItem=[];
-var usaSoutheastItem=[];
-var leisureItem=[];
-var businessItem=["dress shoes", "suits", "dress shirts", "belt"];
+var basicNeeds=["Toothbrush", "Toothpaste", "Chargers", "Travel app", "emergency contact info", "Rental car info", "Hotel infomation", "Cash", "Credit card", "ID", "Sleepwear", "Undergarments"];
+var domesticItem=["Passport", "Travel pillow"];
+var usaWestItem=["Sunglasses", "Coffee maker"];
+var usaMidwestItem=["Cardigan", "Map"];
+var usaNortheastItem=["Cardigan"];
+var usaSouthwestItem=["Sunglasses"];
+var usaSoutheastItem=["Sunglasses", "Mini-fan", "Bug spray"];
+var leisureItem=["Camera", "Notebook"];
+var businessItem=["Dress shoes", "Suits/suitdresses", "Dress shirts", "Belt", "Wristwatch"];
 var springItem=["Light Clothes", "Medication", "Umbrella"];
-var summerItem=["sunglasses", "glasses case", "hat", "sunscreen", "t-shirts", "shorts", "flip-flop/sandals"];
-var fallItem=["Sweater", "Light Jacket", "Boots", "Jeans", "Umbrella", "Medication"];
-var winterItem=["Sweater", "Gloves", "Warm Hat", "Snow Boots", "Chapstick", "Jacket"];
-var maleItem=["tie", "shaving razor"];
-var femaleItem=["makeups", "skincare", "Toiletries"];
-var kidsItem=["diapers", "kids clothes"];
-var petsItem=["leash", "pet food", "pet toy", "pet carrier"];
+var summerItem=["Sunglasses", "Cap", "Sunscreen", "T-shirts", "Bathing suit", "Flip flops/sandals"];
+var fallItem=["Sweater", "Light Jacket", "Boots", "Umbrella", "Medication", "Beanie"];
+var winterItem=["Coat", "Sweater", "Scarf", "Gloves", "Warm Hat", "Snow Boots", "Chapstick", "Cold Medicine"];
+var maleItem=["Tie", "Shaving cream", "Razor"];
+var femaleItem=["Makeup", "Skincare", "Toiletries"];
+var kidsItem=["Chidlren's clothes", "Toys", "Coloring books", "Snacks"];
+var petsItem=["Leash", "Pet food", "Toys", "Pet carrier"];
 var userItem=[];
 
 var choice1;
@@ -79,8 +79,13 @@ var combineUserItem = function(){
   addToUserItem(choice3);
   addToUserItem(choice4);
   addToUserItem(choice7);
-  addToUserItem(choice8);
-  addToUserItem(choice9);
+  if (userInputTravelType=="leisure") {
+    addToUserItem(choice8);
+    addToUserItem(choice9);
+  }else{
+    console.log("business trip");
+  }
+
   console.log(userItem);
 }
 
@@ -548,7 +553,7 @@ var userOutput = function(){
 
     var listOutput = function() {
       for (var i = 0; i < userItem.length; i++) {
-          $("ul").append("<li>" + userItem[i] + "</li>");
+          $("#theListOutPut").append("<li>" + userItem[i] + "</li>");
       }
   }
 
@@ -598,7 +603,9 @@ var userOutput = function(){
 
   tipsOutputSection();
   budgetOutPutSection();
+  combineUserItem();
   listOutput();
+  console.log(userItem);
 //end user output function
 };
 
