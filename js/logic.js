@@ -60,7 +60,7 @@ var fallItem=["Sweater", "Light Jacket", "Boots", "Umbrella", "Medication", "Bea
 var winterItem=["Coat", "Sweater", "Scarf", "Gloves", "Warm Hat", "Snow Boots", "Chapstick", "Cold Medicine"];
 var maleItem=["Tie", "Shaving cream", "Razor"];
 var femaleItem=["Makeup", "Skincare", "Toiletries"];
-var kidsItem=["Chidlren's clothes", "Toys", "Coloring books", "Snacks"];
+var kidsItem=["Children's clothes", "Toys", "Coloring books", "Snacks"];
 var petsItem=["Leash", "Pet food", "Toys", "Pet carrier"];
 var userItem=[];
 
