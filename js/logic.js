@@ -542,9 +542,34 @@ var userOutput = function(){
   $("#userOutputTip1Photo1").html('<i class="large material-icons">lightbulb_outline</i>');
   $("#userOutputTip2Photo2").html('<i class="large material-icons">lightbulb_outline</i>');
   $("#userOutputTip3Photo3").html('<i class="large material-icons">lightbulb_outline</i>');
-  $("#userOutputTip1").text(tip1);
-  $("#userOutputTip2").text(tip2);
-  $("#userOutputTip3").text(tip3);
+  if (userInputRegion=="usaSoutheast"){
+    $("#userOutputTip1").html("<p>The Southeast region of the United States is home to about 2 million wild boars, also called feral pigs</p>");
+    $("#userOutputTip2").html("<p>Swamps cover one-fifth of Florida. Here you can see manatees, alligators and the Florida panther.</p>");
+    $("#userOutputTip3").html("<p>Washington DC falls into the southeast region </p>");
+  }else
+  if (userInputRegion=="usaSouthwest"){
+    $("#userOutputTip1").html("<p>The Southwest Region has only 4 States and the smallest region,but has the largest states, they four states are Arizona,New Mexico,Oklahoma,and Texas.</p>");
+    $("#userOutputTip2").html("<p>Over 26 Native American tribes inhabited the southwest region.</p>");
+    $("#userOutputTip3").html("<p>The climate in this region of the US is basically semi-arid to arid; however areas in this region with a high elevation can get very cold and receive significant snowfall.</p>");
+  }else
+  if (userInputRegion=="usaMidwest"){
+    $("#userOutputTip1").html("<p>The area around Kansas, Missouri, Nebraska and Oklahoma is known as tornado alley because this area has more tornadoes than anywhere else in the country.</p>");
+    $("#userOutputTip2").html("<p>Many people still live in small towns in the Midwest. The largest cities in the Midwest includes Chicago, Minneapolis, Oklahoma City, Des Moines and Cincinnati.</p>");
+    $("#userOutputTip3").html("<p>The Midwest is still cowboy country. One hundred years ago, cowboys drove cattle from Texas to states throughout the Midwest.</p>");
+  }else
+  if (userInputRegion=="usaWest"){
+    $("#userOutputTip1").html("<p>The West has some of the best skiing in the United States. Sun Valley, Idaho, and Vail and Aspen, Colorado are three famous ski resorts in the West.</p>");
+    $("#userOutputTip2").html("<p>Death Valley, an area of the Mojave Desert, located in California is the hottest and driest place in North America. Temperatures there often top 120 degrees Fahrenheit</p>");
+    $("#userOutputTip3").html("<p>The Rocky Mountains are the longest and highest mountain range in North America. They stretch from Canada to Mexico.</p>");
+  }else
+  if (userInputRegion=="usaNortheast"){
+    $("#userOutputTip1").html("<p>There is an amazing amount of National Historic Landmarks in this region of the US. In fact approximately half of these US landmarks are found in this region.</p>");
+    $("#userOutputTip2").html("<p>New York City, which is located in the Northeast, has the highest population of any city in the US; its population exceeds that of most states.</p>");
+    $("#userOutputTip3").html("<p>All 11 states in this region were part of original thirteen British colonies before the US won it's independence in the American Revolution.</p>");
+  }
+  // $("#userOutputTip1").text(tip1);
+  // $("#userOutputTip2").text(tip2);
+  // $("#userOutputTip3").text(tip3);
   }
   tipsOutputSection();
     budgetOutPutSection();
