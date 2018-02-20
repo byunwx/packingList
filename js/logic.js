@@ -170,6 +170,7 @@ var listGenerator = function(){
 
 var changeQuestion = function(index){
   localStorage.setItem("userAnswerListArr", JSON.stringify(userAnswerListArr));
+  userItem=[];
   $("#sideContent").empty();
   listGenerator();
   $("#mainContent").html(mainContentHtml[index]);
@@ -285,7 +286,7 @@ var questionThree = function() {
         userInputTravelType="business";
         console.log(userInputTravelType);
         userAnswerListArr.splice(2, 1, this.id);
-        userAnswerListArr.splice(7, 2);      
+        userAnswerListArr.splice(7, 2);
         changeQuestion(3);
         console.log(userAnswerListArr);
         choice3=businessItem;
