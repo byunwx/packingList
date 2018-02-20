@@ -384,7 +384,7 @@ var questionFour = function(){
 var questionFive = function(){
   $("#questionFiveButton").on("click", function(){
       event.preventDefault();
-      var numbers = /^[0-9]+$/;
+      var numbers = /^[1-9][0-9]+$/;
       var days = $("#daysStaying").val();
       if(days.match(numbers))
       {
@@ -405,7 +405,7 @@ var questionFive = function(){
 var questionSix = function(){
   $("#questionSixButton").on("click", function(){
       event.preventDefault();
-      var numbers = /^[0-9]+$/;
+      var numbers = /^[1-9][0-9]+$/;
       var budget = $("#userBudget").val();
 
       if(budget.match(numbers))
@@ -709,6 +709,7 @@ var localStorageSave = function(){
     setTimeout(changeQuestion, 2600, htmlIndex);
   }
 }
+
 localStorageSave();
 
 });
