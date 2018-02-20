@@ -97,7 +97,7 @@ var saveUserItem = function(){
 
 var makeBackBone = function (){
   $("body").empty()
-  $("body").html("<nav><div class='nav-wrapper'><a href=''#!'' class='brand-logo'>Pack-man</a><span id='questionPrompt'>center mecenter mecenter mecenter mecenter mecenter mecenter me</span><ul class='right hide-on-med-and-down'><li><a href=''></a></li></ul></div></nav><div class='container' id='contentSectionId'><div class='row'><div class='col l9' id='mainContent'></div><div class='col l3' id='sideContent'></div></div></div><footer class='page-footer'><div class='container'><div class='row'><div class='col l12'><h5 class='white-text' id='footerContent'>Footer Content</h5></div></div></div></footer>");
+  $("body").html("<nav><div class='nav-wrapper'><a href=''#!'' class='brand-logo'></a><span id='questionPrompt'>center mecenter mecenter mecenter mecenter mecenter mecenter me</span><ul class='right hide-on-med-and-down'><li><a href=''></a></li></ul></div></nav><div class='container' id='contentSectionId'><div class='row'><div class='col l9' id='mainContent'></div><div class='col l3' id='sideContent'></div></div></div><footer class='page-footer'><div class='container'><div class='row'><div class='col l12'><h5 class='white-text' id='footerContent'>Footer Content</h5></div></div></div></footer>");
 }
 
 var goBackBtn = function (){
@@ -557,12 +557,12 @@ var localStorageSave = function(){
 
     }else{
       localStorage.clear();
-      setTimeout(makeBackBone, 1000);
-      setTimeout(changeQuestion, 1200, htmlIndex);
+      setTimeout(makeBackBone, 2500);
+      setTimeout(changeQuestion, 2600, htmlIndex);
     }
   }else{
-    setTimeout(makeBackBone, 1000);
-    setTimeout(changeQuestion, 1200, htmlIndex);
+    setTimeout(makeBackBone, 2500);
+    setTimeout(changeQuestion, 2600, htmlIndex);
   }
 }
 localStorageSave();

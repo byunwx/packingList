@@ -1,19 +1,22 @@
 #logoAnimation{
   position: fixed;
-  width: 150px;
+  width: 230px;
   height: 150px;
   top: 40%;
   left: 42%;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url(https://media.giphy.com/media/3oriNXgmyShWPjuaFa/giphy.gif);
+  background-image: url("../images/packwhite.gif");
 }
 .brand-logo{
+  width: 150px;
+  height: 65px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url(https://media.giphy.com/media/3oriNXgmyShWPjuaFa/giphy.gif);
+  background-image: url("../images/packstill.png");
+  background-color: white;
 }
 #contentSectionId{
   margin-bottom: 100px;
@@ -22,7 +25,7 @@
   margin-top: 5%;
 }
 #questionPrompt{
-  margin-left: 10%;
+  margin-left: 13%;
   font-size: 30px;
 }
 html{
