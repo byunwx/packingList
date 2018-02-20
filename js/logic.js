@@ -45,23 +45,23 @@ var iconArr=["flight", "map", "business_center", "wb_sunny", "schedule", "attach
 //   localStorage.setItem("userItem", userItem);
 // }
 
-var basicNeeds=["Toothbrush", "Toothpaste", "Chargers", "Travel app", "emergency contact info", "Rental car info", "Hotel infomation", "Cash", "Credit card", "ID", "Sleepwear", "Undergarments"];
-var domesticItem=["Passport", "Travel pillow"];
-var usaWestItem=["Sunglasses", "Coffee maker"];
-var usaMidwestItem=["Cardigan", "Map"];
-var usaNortheastItem=["Cardigan"];
-var usaSouthwestItem=["Sunglasses"];
-var usaSoutheastItem=["Sunglasses", "Mini-fan", "Bug spray"];
-var leisureItem=["Camera", "Notebook"];
-var businessItem=["Dress shoes", "Suits/suitdresses", "Dress shirts", "Belt", "Wristwatch"];
+var basicNeeds=["toothbrush and toothpaste", "cell phone", "chargers", "travel pillow", "navigation/ travel app", "shampoo/conditioner", "emergency contact info", "rental car info", "hotel infomation", "cash", "credit card", "identification", "camera", "sleepwear", "underwear", "socks"];
+var domesticItem=[];
+var usaWestItem=[];
+var usaMidwestItem=[];
+var usaNortheastItem=[];
+var usaSouthwestItem=[];
+var usaSoutheastItem=[];
+var leisureItem=[];
+var businessItem=["dress shoes", "suits", "dress shirts", "belt"];
 var springItem=["Light Clothes", "Medication", "Umbrella"];
-var summerItem=["Sunglasses", "Cap", "Sunscreen", "T-shirts", "Bathing suit", "Flip flops/sandals"];
-var fallItem=["Sweater", "Light Jacket", "Boots", "Umbrella", "Medication", "Beanie"];
-var winterItem=["Coat", "Sweater", "Scarf", "Gloves", "Warm Hat", "Snow Boots", "Chapstick", "Cold Medicine"];
-var maleItem=["Tie", "Shaving cream", "Razor"];
-var femaleItem=["Makeup", "Skincare", "Toiletries"];
-var kidsItem=["Chidlren's clothes", "Toys", "Coloring books", "Snacks"];
-var petsItem=["Leash", "Pet food", "Toys", "Pet carrier"];
+var summerItem=["sunglasses", "glasses case", "hat", "sunscreen", "t-shirts", "shorts", "flip-flop/sandals"];
+var fallItem=["Sweater", "Light Jacket", "Boots", "Jeans", "Umbrella", "Medication"];
+var winterItem=["Sweater", "Gloves", "Warm Hat", "Snow Boots", "Chapstick", "Jacket"];
+var maleItem=["tie", "shaving razor"];
+var femaleItem=["makeups", "skincare", "Toiletries"];
+var kidsItem=["diapers", "kids clothes"];
+var petsItem=["leash", "pet food", "pet toy", "pet carrier"];
 var userItem=[];
 
 var choice1;
@@ -424,8 +424,16 @@ var questionSeven = function() {
         userAnswerListArr.splice(6, 1, this.id);
         choice7=maleItem;
         localStorage.setItem("userInputGender", userInputGender);
-        changeQuestion(7);
-        console.log(userAnswerListArr);
+        if (userInputTravelType=="business") {
+          userInputChild="";
+          userInputPets="";
+          changeQuestion(9);
+        }else if (userInputTravelType=="leisure") {
+          changeQuestion(7);
+        }else{
+          console.log("error on question seven");
+        }
+
   })
   $("#female").on("click", function () {
       // function to add items to list
@@ -434,8 +442,15 @@ var questionSeven = function() {
         userAnswerListArr.splice(6, 1, this.id);
         choice7=femaleItem;
         localStorage.setItem("userInputGender", userInputGender);
-        changeQuestion(7);
-        console.log(userAnswerListArr);
+        if (userInputTravelType=="business") {
+          userInputChild="";
+          userInputPets="";
+          changeQuestion(9);
+        }else if (userInputTravelType=="leisure") {
+          changeQuestion(7);
+        }else{
+          console.log("error on question seven");
+        }
   })
 }
 
@@ -539,7 +554,7 @@ var userOutput = function(){
   var budgetOutPutSection = function (){
   var budgetPerDay= (Math.round(100*userInputBudget/userInputDays)/100)+"per day";
   var titlebudget = "<h3>Budget</h3>";
-  var totalbudget = $("<p></p>").text("$"+userInputBudget);
+  var totalbudget = $("<p></p>").text("Total: $"+userInputBudget);
   var budgetperdaysection = $("<p></p>").text("$"+budgetPerDay);
   $(".outputBudget").append(titlebudget, totalbudget, budgetperdaysection);
   }
@@ -548,13 +563,40 @@ var userOutput = function(){
   $("#userOutputTip1Photo1").html('<i class="large material-icons">lightbulb_outline</i>');
   $("#userOutputTip2Photo2").html('<i class="large material-icons">lightbulb_outline</i>');
   $("#userOutputTip3Photo3").html('<i class="large material-icons">lightbulb_outline</i>');
-  $("#userOutputTip1").text(tip1);
-  $("#userOutputTip2").text(tip2);
-  $("#userOutputTip3").text(tip3);
+  if (userInputRegion=="usaSoutheast"){
+    $("#userOutputTip1").html("<p>The Southeast region of the United States is home to about 2 million wild boars, also called feral pigs</p>");
+    $("#userOutputTip2").html("<p>Swamps cover one-fifth of Florida. Here you can see manatees, alligators and the Florida panther.</p>");
+    $("#userOutputTip3").html("<p>Washington DC falls into the southeast region </p>");
+  }else
+  if (userInputRegion=="usaSouthwest"){
+    $("#userOutputTip1").html("<p>The Southwest Region has only 4 States and the smallest region,but has the largest states, they four states are Arizona,New Mexico,Oklahoma,and Texas.</p>");
+    $("#userOutputTip2").html("<p>Over 26 Native American tribes inhabited the southwest region.</p>");
+    $("#userOutputTip3").html("<p>The climate in this region of the US is basically semi-arid to arid; however areas in this region with a high elevation can get very cold and receive significant snowfall.</p>");
+  }else
+  if (userInputRegion=="usaMidwest"){
+    $("#userOutputTip1").html("<p>The area around Kansas, Missouri, Nebraska and Oklahoma is known as tornado alley because this area has more tornadoes than anywhere else in the country.</p>");
+    $("#userOutputTip2").html("<p>Many people still live in small towns in the Midwest. The largest cities in the Midwest includes Chicago, Minneapolis, Oklahoma City, Des Moines and Cincinnati.</p>");
+    $("#userOutputTip3").html("<p>The Midwest is still cowboy country. One hundred years ago, cowboys drove cattle from Texas to states throughout the Midwest.</p>");
+  }else
+  if (userInputRegion=="usaWest"){
+    $("#userOutputTip1").html("<p>The West has some of the best skiing in the United States. Sun Valley, Idaho, and Vail and Aspen, Colorado are three famous ski resorts in the West.</p>");
+    $("#userOutputTip2").html("<p>Death Valley, an area of the Mojave Desert, located in California is the hottest and driest place in North America. Temperatures there often top 120 degrees Fahrenheit</p>");
+    $("#userOutputTip3").html("<p>The Rocky Mountains are the longest and highest mountain range in North America. They stretch from Canada to Mexico.</p>");
+  }else
+  if (userInputRegion=="usaNortheast"){
+    $("#userOutputTip1").html("<p>There is an amazing amount of National Historic Landmarks in this region of the US. In fact approximately half of these US landmarks are found in this region.</p>");
+    $("#userOutputTip2").html("<p>New York City, which is located in the Northeast, has the highest population of any city in the US; its population exceeds that of most states.</p>");
+    $("#userOutputTip3").html("<p>All 11 states in this region were part of original thirteen British colonies before the US won it's independence in the American Revolution.</p>");
+  }else {
+    console.log("error on tips in output slide");
   }
+  // $("#userOutputTip1").text(tip1);
+  // $("#userOutputTip2").text(tip2);
+  // $("#userOutputTip3").text(tip3);
+  }
+
   tipsOutputSection();
-    budgetOutPutSection();
-    listOutput();
+  budgetOutPutSection();
 //end user output function
 };
 
