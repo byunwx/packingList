@@ -365,6 +365,7 @@ var questionSix = function(){
       if(budget.match(numbers))
       {
       userInputBudget = budget;
+      localStorage.setItem("userInputBudget", userInputBudget);
       userAnswerListArr.splice(5, 1, userInputBudget);
       $("#mainContent").empty();
       changeQuestion(6);
@@ -507,7 +508,7 @@ var localStorageSave = function(){
       }else if (localStorage.getItem("userInputTravelType")) {
         userInputDomestic = localStorage.getItem("userInputDomestic");
         userInputRegion = localStorage.getItem("userInputRegion");
-        console.log("working")
+
         changeQuestion(2);
       }else if (localStorage.getItem("userInputRegion")) {
         userInputDomestic = localStorage.getItem("userInputDomestic");
