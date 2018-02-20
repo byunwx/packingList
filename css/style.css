@@ -20,7 +20,7 @@
 }
 
 .nav-new-color {
-  background-color: #3d85ab!important;
+  background-color: #F3A738!important;
 }
 
 #contentSectionId{
@@ -41,12 +41,12 @@ html{
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #65a5cb;
+    background-color: #F5B75C;
     color: white;
     text-align: center;
 }
 #blackIcon{
-  color: black!important;
+  color: #65A5C8!important;
 }
 
 /* question 1 */
