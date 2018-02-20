@@ -285,6 +285,7 @@ var questionThree = function() {
         userInputTravelType="business";
         console.log(userInputTravelType);
         userAnswerListArr.splice(2, 1, this.id);
+        userAnswerListArr.splice(7, 2);      
         changeQuestion(3);
         console.log(userAnswerListArr);
         choice3=businessItem;
