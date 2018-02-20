@@ -485,6 +485,112 @@ var questionNine = function() {
   })
 }
 
+//USER OUTPUT FUNCTION
+var userOutput = function(){
+  $element.velocity("scroll", { container: $("#container") });
+  var questionTwo = function(){
+    $("#usaSoutheast").on("click", function(){
+      $("#regionName").prepend("<h2>Southeast</h2>");
+    })
+    $("#usaSouthWest").on("click", function(){
+      $("#regionName").prepend("<h2>SouthWest</h2>");
+    })
+    $("#usaMidwest").on("click", function(){
+      $("#regionName").prepend("<h2>Midwest</h2>");
+    })
+    $("#usaWest").on("click", function(){
+      $("#regionName").prepend("<h2>West</h2>");
+    })
+    $("#usaNortheast").on("click", function(){
+      $("#regionName").prepend("<h2>Northeast</h2>");
+    })
+    $()
+  }
+
+  var questionThree = function() {
+    $("#Business").on("click", function () {
+      userInputTravelType="business";
+      console.log(userInputTravelType);
+      console.log(userAnswerListArr);
+    })
+
+    $("#Leisure").on("click", function () {
+      userInputTravelType="leisure";
+      console.log(userInputTravelType);
+      // userAnswerListArr.push(this.id);
+      console.log(userAnswerListArr);
+    })
+
+    if (userInputTravelType) == 'business'{
+      $('#outputTravelType').prepend("<img src='images/output-business.png'/>");
+    } else {
+      $("#ouputTravelType").prepend("<img src='images/output-leisure.png'/>");
+    }
+ 
+
+  var questionFour = function(){
+    $("#Spring").on("click", function() {
+    // function to add items to list
+    userInputSeason="spring";
+    console.log(userInputSeason);
+    userAnswerListArr.push(this.id);
+    console.log(userAnswerListArr);
+    })
+    $("#Summer").on("click", function() {
+    // function to add items to list
+    userInputSeason="summer";
+    console.log(userInputSeason);
+    userAnswerListArr.push(this.id);
+    console.log(userAnswerListArr);
+    })
+    $("#Fall").on("click", function() {
+    // function to add items to list
+    userInputSeason="fall";
+    console.log(userInputSeason);
+    userAnswerListArr.push(this.id);
+    console.log(userAnswerListArr);
+    })
+    $("#Winter").on("click", function() {
+    // function to add items to list
+    userInputSeason="winter";
+    console.log(userInputSeason);
+    userAnswerListArr.push(this.id);
+    console.log(userAnswerListArr);
+    })
+
+    if (userInputSeason="spring") {
+    $("#outputSeason").prepend("<img src='images/output-spring.png'/>");
+    }
+    if (userInputSeason="summer") {
+    $("#outputSeason").prepend("<img src='images/output-summer.png'/>");
+    }
+    if (userInputSeason="fall") {
+    $("#outputSeason").prepend("<img src='images/output-fall.png'/>");
+    }
+    if (userInputSeason="winter") {
+    $("#outputSeason").prepend("<img src='images/output-winter.png'/>");
+    }
+  }
+
+  var budgetOutPutSection = function (){
+  var budgetPerDay= (userInputBudget/userInputDays)+"per day";
+  var titlebudget = "<h3>Budget</h3>";
+  var totalbudget = $("<p></p>").text("$"+userInputBudget);
+  var budgetperdaysection = $("<p></p>").text("$"+budgetPerDay+"/day");
+  $(".outputBudget").append(titlebudget, totalbudget, budgetperdaysection);
+  }
+
+  var tipsOutputSection = function(tip1, tip2, tip3) {
+  $("#userOutputTip1Photo1").html('<i class="large material-icons">lightbulb_outline</i>');
+  $("#userOutputTip2Photo2").html('<i class="large material-icons">lightbulb_outline</i>');
+  $("#userOutputTip3Photo3").html('<i class="large material-icons">lightbulb_outline</i>');
+  $("#userOutputTip1").text(tip1);
+  $("#userOutputTip2").text(tip2);
+  $("#userOutputTip3").text(tip3);
+  }
+//end user output function 
+};
+
 var footerMaker= function (){
   $("#footerContent").empty();
   for (var i = 0; i < iconArr.length; i++) {
