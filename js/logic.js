@@ -371,7 +371,7 @@ var questionFour = function(){
 
         userAnswerListArr.splice(3, 1, this.id);
         console.log(userInputSeason);
-        
+
         changeQuestion(4);
         console.log(userAnswerListArr);
         $("body").css('background-image', '');
@@ -527,7 +527,7 @@ var userOutput = function(){
     $("#regionName").prepend("<h2>SouthWest</h2>");
     choice2=usaSouthwestItem;
   }else
-  if (userInputRegion=="#usaMidwest") {
+  if (userInputRegion=="usaMidwest") {
     $("#regionName").prepend("<h2>Midwest</h2>");
     choice2=usaMidwestItem;
   }else
