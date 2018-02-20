@@ -711,7 +711,7 @@ var localStorageSave = function(){
   }
 }
 var btnPrintGenerator =function (){
-  $("#theListOutPut").append("<a class='waves-effect waves-teal btn-flat' id='printBtn'>*Print the List*</a>")
+  $("#theListOutPut").append("<br><a class='waves-effect waves-light btn' id='printBtn'>Print the List</a>")
   $("#printBtn").on("click", function(){
    window.print();
   })
