@@ -102,7 +102,7 @@ var saveUserItem = function(){
 
 var makeBackBone = function (){
   $("body").empty()
-  $("body").html("<nav><div class='nav-wrapper nav-new-color'><a href=''#!'' class='brand-logo'></a><span id='questionPrompt'>center mecenter mecenter mecenter mecenter mecenter mecenter me</span><ul class='right hide-on-med-and-down'><li><a href=''></a></li></ul></div></nav><div class='container' id='contentSectionId'><div class='row'><div class='col l9' id='mainContent'></div><div class='col l3' id='sideContent'></div></div></div><footer class='page-footer'><div class='container'><div class='row'><div class='col l12'><h5 class='white-text' id='footerContent'>Footer Content</h5></div></div></div></footer>");
+  $("body").html("<nav><div class='nav-wrapper nav-new-color'><a href=''#!'' class='brand-logo'></a><span id='questionPrompt'>loading</span><ul class='right hide-on-med-and-down'><li><a href=''></a></li></ul></div></nav><div class='container' id='contentSectionId'><div class='row'><div class='col l9' id='mainContent'></div><div class='col l3' id='sideContent'></div></div></div><footer class='page-footer'><div class='container'><div class='row'><div class='col l12'><h5 class='white-text' id='footerContent'>loading</h5></div></div></div></footer>");
 }
 
 var goBackBtn = function (){
@@ -384,7 +384,7 @@ var questionFour = function(){
 var questionFive = function(){
   $("#questionFiveButton").on("click", function(){
       event.preventDefault();
-      var numbers = /^[1-9][0-9]+$/;
+      var numbers = /^[0-9]+$/;
       var days = $("#daysStaying").val();
       if(days.match(numbers))
       {
@@ -405,7 +405,7 @@ var questionFive = function(){
 var questionSix = function(){
   $("#questionSixButton").on("click", function(){
       event.preventDefault();
-      var numbers = /^[1-9][0-9]+$/;
+      var numbers = /^[0-9]+$/;
       var budget = $("#userBudget").val();
 
       if(budget.match(numbers))
@@ -624,6 +624,7 @@ var userOutput = function(){
   budgetOutPutSection();
   combineUserItem();
   listOutput();
+  btnPrintGenerator();
 
   console.log(userItem);
 //end user output function
@@ -709,7 +710,12 @@ var localStorageSave = function(){
     setTimeout(changeQuestion, 2600, htmlIndex);
   }
 }
-
+var btnPrintGenerator =function (){
+  $("#theListOutPut").append("<a class='waves-effect waves-teal btn-flat' id='printBtn'>*Print the List*</a>")
+  $("#printBtn").on("click", function(){
+    window.print();
+  })
+}
 localStorageSave();
 
 });
