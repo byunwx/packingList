@@ -44,11 +44,14 @@ html{
     background-color: #FFBF00;
     color: white;
     text-align: center;
+    z-index: 2;
 }
 #blackIcon{
   color: #65A5C8!important;
 }
-
+#printBtn{
+  z-index: 1;
+}
 /* question 1 */
 
 .questionOnebox{
