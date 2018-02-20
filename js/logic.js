@@ -464,7 +464,7 @@ var footerMaker= function (){
 
 var localStorageSave = function(){
   if (localStorage.getItem("userInputDomestic")) {
-    var questionGoBack = confirm("There is unfinished work do you want to go back to where u left off?");
+    var questionGoBack = confirm("There is unfinished work do you want to go back to where you left off?");
     if (questionGoBack) {
       makeBackBone();
       var retrievedData= localStorage.getItem("userAnswerListArr");
