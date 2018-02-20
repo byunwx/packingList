@@ -489,6 +489,8 @@ var questionNine = function() {
 
 //USER OUTPUT FUNCTION
 var userOutput = function(){
+  $("#questionPrompt").empty();
+  $("#questionPrompt").text("Here's what we have for you");
   // $("#mainContent").velocity("scroll", { container: $("#container") }); this is wrong u have to fix it
   if (userInputRegion=="usaSoutheast") {
     $("#regionName").prepend("<h2>Southeast</h2>");
