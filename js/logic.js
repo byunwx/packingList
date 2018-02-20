@@ -45,23 +45,23 @@ var iconArr=["flight", "map", "business_center", "wb_sunny", "schedule", "attach
 //   localStorage.setItem("userItem", userItem);
 // }
 
-var basicNeeds=[];
+var basicNeeds=["toothbrush and toothpaste", "cell phone", "chargers", "travel pillow", "navigation/ travel app", "shampoo/conditioner", "emergency contact info", "rental car info", "hotel infomation", "cash", "credit card", "identification", "camera", "sleepwear", "underwear", "socks"];
 var domesticItem=[];
-var usaWestItem=["test1"];
-var usaMidwestItem=["test2"];
-var usaNortheastItem=["test3"];
-var usaSouthwestItem=["test4"];
-var usaSoutheastItem=["test5"];
+var usaWestItem=[];
+var usaMidwestItem=[];
+var usaNortheastItem=[];
+var usaSouthwestItem=[];
+var usaSoutheastItem=[];
 var leisureItem=[];
-var businessItem=[];
+var businessItem=["dress shoes", "suits", "dress shirts", "belt"];
 var springItem=["Light Clothes", "Medication", "Umbrella"];
-var summerItem=[];
+var summerItem=["sunglasses", "glasses case", "hat", "sunscreen", "t-shirts", "shorts", "flip-flop/sandals"];
 var fallItem=["Sweater", "Light Jacket", "Boots", "Jeans", "Umbrella", "Medication"];
 var winterItem=["Sweater", "Gloves", "Warm Hat", "Snow Boots", "Chapstick", "Jacket"];
-var maleItem=[];
-var femaleItem=[];
-var kidsItem=[];
-var petsItem=[];
+var maleItem=["tie", "shaving razor"];
+var femaleItem=["makeups", "skincare", "Toiletries"];
+var kidsItem=["diapers", "kids clothes"];
+var petsItem=["leash", "pet food", "pet toy", "pet carrier"];
 var userItem=[];
 
 var choice1;
