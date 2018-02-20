@@ -516,16 +516,16 @@ var userOutput = function(){
     }
 
 
-    if (userInputSeason="spring") {
+    if (userInputSeason=="spring") {
     $("#outputSeason").prepend("<img src='images/output-spring.png'/>");
-    }
-    if (userInputSeason="summer") {
+    }else
+    if (userInputSeason=="summer") {
     $("#outputSeason").prepend("<img src='images/output-summer.png'/>");
-    }
-    if (userInputSeason="fall") {
+    }else
+    if (userInputSeason=="fall") {
     $("#outputSeason").prepend("<img src='images/output-fall.png'/>");
-    }
-    if (userInputSeason="winter") {
+    }else
+    if (userInputSeason=="winter") {
     $("#outputSeason").prepend("<img src='images/output-winter.png'/>");
     }
 
