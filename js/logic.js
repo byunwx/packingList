@@ -3,7 +3,7 @@ var mainContentHtml= ["<div class='col l6'><div class='questionOnebox circle' id
 
 "<div id='usaMap'><div class='row'><div class='col l4'><div class='questionTwo' id='usaWest'>West</div></div><div class='col l4'><div class='questionTwo' id='usaMidwest'>Midwest</div></div><div class='col l4'><div class='questionTwo' id='usaNortheast'>Northeast</div></div></div><div class='row'><div class='col l4 offset-l4'><div class='questionTwo' id='usaSouthwest'>Southwest</div></div><div class='col l4'><div class='questionTwo' id='usaSoutheast'>Southeast</div></div></div></div>",
 
- "<div class='col l6'><img class='questionThreeImg' id='Business' src='https://png.icons8.com/metro/1600/business.png' alt='Business'><p class='questionThreeText'>Business</p></div><div class='col l6'><img class='questionThreeImg' id='Leisure' src='https://cdn3.iconfinder.com/data/icons/abstract-1/512/leisure_A-128.png' alt='Leisure'><p class='questionThreeText'>Leisure</p></div>",
+"<div class='col l6'><img class='questionThreeImg' id='Business' src='https://png.icons8.com/metro/1600/business.png' alt='Business'><p class='questionThreeText'>Business</p></div><div class='col l6'><img class='questionThreeImg' id='Leisure' src='https://cdn3.iconfinder.com/data/icons/abstract-1/512/leisure_A-128.png' alt='Leisure'><p class='questionThreeText'>Leisure</p></div>",
 
  "<div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Spring' src='https://media.giphy.com/media/l4hLSoxh3bZOvrn0c/giphy.gif' alt='String'></div><div class='col m2'><p>Spring</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class ='questionFour' id='Summer' src='https://media.giphy.com/media/12G7BxUHSMM2TC/giphy.gif' alt='Summer'></div><div class='col m2'><p>Summer</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Fall' src='https://media.giphy.com/media/UxTZDNv0Zej4s/giphy.gif' alt='Fall'></div><div class='col m2'><p>Fall</p></div></div></div><div class='divider'></div><div class='section' id='winterBackground'><div class='row'><div class='col m2'><img class='questionFour' id='Winter' src='https://media.giphy.com/media/OWxrxRHY6afRu/giphy.gif' alt='Winter'></div><div class='col m2'><p>Winter</p></div></div></div>",
 
@@ -14,7 +14,6 @@ var mainContentHtml= ["<div class='col l6'><div class='questionOnebox circle' id
 "<div class='col l6'><img class='questionThreeImg' id='male' src='./images/man.png' height={{500px}} width={{500px}} alt='male'><p class='questionThreeText'>Male</p></div><div class='col l6'><img class='questionThreeImg' id='female'  src='./images/woman.png' height={{500px}} width={{500px}} alt='Female'><p class='questionThreeText'>Female</p></div>",
 
 "<div class='col l6'><img class='questionThreeImg' id='kids' src='./images/kids.png' height={{500px}} width={{500px}} alt='kids'><p class='questionThreeText'>Kids</p></div><div class='col l6'><img class='questionThreeImg' id='no-kids'  src='./images/no-kids.png' height={{500px}} width={{500px}} alt='no-kids'><p class='questionThreeText'>No-Kids</p></div>",
-
 
 "<div class='col l6'><img class='questionThreeImg' id='pets' src='./images/pets.png' height={{500px}} width={{500px}} alt='pets'><p class='questionThreeText'>Pets</p></div><div class='col l6'><img class='questionThreeImg' id='no-pets'  src='./images/no-pets.png' height={{500px}} width={{500px}} alt='no-pets'><p class='questionThreeText'>No-Pets</p></div>",
 
@@ -163,7 +162,6 @@ var listGenerator = function(){
   }
 
 }
-
 
 var changeQuestion = function(index){
   localStorage.setItem("userAnswerListArr", JSON.stringify(userAnswerListArr));
