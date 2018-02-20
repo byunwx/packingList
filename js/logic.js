@@ -190,6 +190,8 @@ var changeQuestion = function(index){
     questionEight();
   }else if (index==8){
     questionNine();
+  }else if (index==9){
+    userOutput();
   }else{
     console.log("error at ChangeQuestion");
   }
@@ -487,76 +489,32 @@ var questionNine = function() {
 
 //USER OUTPUT FUNCTION
 var userOutput = function(){
-  $element.velocity("scroll", { container: $("#container") });
-  var questionTwo = function(){
-    $("#usaSoutheast").on("click", function(){
-      $("#regionName").prepend("<h2>Southeast</h2>");
-    })
-    $("#usaSouthWest").on("click", function(){
-      $("#regionName").prepend("<h2>SouthWest</h2>");
-    })
-    $("#usaMidwest").on("click", function(){
-      $("#regionName").prepend("<h2>Midwest</h2>");
-    })
-    $("#usaWest").on("click", function(){
-      $("#regionName").prepend("<h2>West</h2>");
-    })
-    $("#usaNortheast").on("click", function(){
-      $("#regionName").prepend("<h2>Northeast</h2>");
-    })
-    $()
+  // $("#mainContent").velocity("scroll", { container: $("#container") }); this is wrong u have to fix it
+  if (userInputRegion=="usaSoutheast") {
+    $("#regionName").prepend("<h2>Southeast</h2>");
+  }else
+  if (userInputRegion=="usaSouthwest") {
+    $("#regionName").prepend("<h2>SouthWest</h2>");
+  }else
+  if (userInputRegion=="#usaMidwest") {
+    $("#regionName").prepend("<h2>Midwest</h2>");
+  }else
+  if (userInputRegion=="usaWest") {
+    $("#regionName").prepend("<h2>West</h2>");
+  }else
+  if (userInputRegion=="usaNortheast") {
+    $("#regionName").prepend("<h2>Northeast</h2>");
+  }else{
+    console.log("error on userOutput title")
   }
 
-  var questionThree = function() {
-    $("#Business").on("click", function () {
-      userInputTravelType="business";
-      console.log(userInputTravelType);
-      console.log(userAnswerListArr);
-    })
 
-    $("#Leisure").on("click", function () {
-      userInputTravelType="leisure";
-      console.log(userInputTravelType);
-      // userAnswerListArr.push(this.id);
-      console.log(userAnswerListArr);
-    })
-
-    if (userInputTravelType) == 'business'{
+    if (userInputTravelType == 'business'){
       $('#outputTravelType').prepend("<img src='images/output-business.png'/>");
     } else {
       $("#ouputTravelType").prepend("<img src='images/output-leisure.png'/>");
     }
- 
 
-  var questionFour = function(){
-    $("#Spring").on("click", function() {
-    // function to add items to list
-    userInputSeason="spring";
-    console.log(userInputSeason);
-    userAnswerListArr.push(this.id);
-    console.log(userAnswerListArr);
-    })
-    $("#Summer").on("click", function() {
-    // function to add items to list
-    userInputSeason="summer";
-    console.log(userInputSeason);
-    userAnswerListArr.push(this.id);
-    console.log(userAnswerListArr);
-    })
-    $("#Fall").on("click", function() {
-    // function to add items to list
-    userInputSeason="fall";
-    console.log(userInputSeason);
-    userAnswerListArr.push(this.id);
-    console.log(userAnswerListArr);
-    })
-    $("#Winter").on("click", function() {
-    // function to add items to list
-    userInputSeason="winter";
-    console.log(userInputSeason);
-    userAnswerListArr.push(this.id);
-    console.log(userAnswerListArr);
-    })
 
     if (userInputSeason="spring") {
     $("#outputSeason").prepend("<img src='images/output-spring.png'/>");
@@ -570,7 +528,7 @@ var userOutput = function(){
     if (userInputSeason="winter") {
     $("#outputSeason").prepend("<img src='images/output-winter.png'/>");
     }
-  }
+
 
   var budgetOutPutSection = function (){
   var budgetPerDay= (userInputBudget/userInputDays)+"per day";
@@ -588,7 +546,7 @@ var userOutput = function(){
   $("#userOutputTip2").text(tip2);
   $("#userOutputTip3").text(tip3);
   }
-//end user output function 
+//end user output function
 };
 
 var footerMaker= function (){
