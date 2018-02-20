@@ -17,7 +17,7 @@ var mainContentHtml= ["<div class='col l6'><div class='questionOnebox circle' id
 
 "<div class='col l6'><img class='questionThreeImg' id='pets' src='./images/pets.png' height={{500px}} width={{500px}} alt='pets'><p class='questionThreeText'>Pets</p></div><div class='col l6'><img class='questionThreeImg' id='no-pets'  src='./images/no-pets.png' height={{500px}} width={{500px}} alt='no-pets'><p class='questionThreeText'>No-Pets</p></div>",
 
-"<div class='row'><div class='col s9 output' id='mainContent'><div class='row center'><h2 class='header col s12' id='regionName'></h2></div></div></div><div class='row center-align' id='weatherType'></div><div class='row center-align'><div class='col m4'><div id='ouputTravelType'></div></div><div class='col m4'><div id='outputSeason'></div></div><div class='col m4'><div class='outputBudget'></div></div></div><div class='divider'></div><div class='row center'><div class='col s4' id='userOutputTip1Photo1'></div><div class='col s8 left-align' id='userOutputTip1'></div></div><div class='row center'><div class='col s4' id='userOutputTip2Photo2'></div><div class='col s8 left-align' id='userOutputTip2'></div></div><div class='row center'><div class='col s4' id='userOutputTip3Photo3'></div><div class='col s8 left-align' id='userOutputTip3'></div></div><div class='divider'></div>"];
+"<div class='row'><div class='col s12 output' id='mainContent'><div class='row center'><h2 class='header col s12' id='regionName'></h2></div></div></div><div class='row center-align' id='weatherType'></div><div class='row center-align'><div class='col m4'><div id='ouputTravelType'></div></div><div class='col m4'><div id='outputSeason'></div></div><div class='col m4'><div class='outputBudget'></div></div></div><div class='divider'></div><div class='row center'><div class='col s4' id='userOutputTip1Photo1'></div><div class='col s8 left-align' id='userOutputTip1'></div></div><div class='row center'><div class='col s4' id='userOutputTip2Photo2'></div><div class='col s8 left-align' id='userOutputTip2'></div></div><div class='row center'><div class='col s4' id='userOutputTip3Photo3'></div><div class='col s8 left-align' id='userOutputTip3'></div></div><div class='divider'></div>"];
 
 var questionPromptArr=["Will you be traveling domestically or internationally?", "Select the region you will be traveling to.", "Are you traveling on business or for leisure?", "When will you be traveling?", "How many days will you be staying?", "What is your budget for this trip? (enter dollar amount)", "Tell us about yourself.", "Do you have Kids or no?t", "Do you keep pets or not?"];
 
@@ -512,9 +512,9 @@ var userOutput = function(){
 
 
     if (userInputTravelType == 'business'){
-      $('#outputTravelType').prepend("<img src='images/output-business.png'/>");
+      $('#outputTravelType').prepend("<img src='./images/output-business.png'/>");
     } else {
-      $("#ouputTravelType").prepend("<img src='images/output-leisure.png'/>");
+      $("#ouputTravelType").prepend("<img src='./images/output-leisure.png'/>");
     }
 
 
@@ -548,6 +548,8 @@ var userOutput = function(){
   $("#userOutputTip2").text(tip2);
   $("#userOutputTip3").text(tip3);
   }
+  tipsOutputSection();
+    budgetOutPutSection();
 //end user output function
 };
 
