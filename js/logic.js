@@ -1,9 +1,9 @@
 $(document).ready(function(){
-var mainContentHtml= ["<div class='col l6'><div class='questionOnebox circle' id='domestic'>Domestic</div></div><div class='col l6'><div class='questionOnebox circle' id='international'>international</div></div>",
+var mainContentHtml= ["<div class='col s6 l6'><div class='questionOnebox circle' id='domestic'>Domestic</div></div><div class='col s6 l6'><div class='questionOnebox circle' id='international'>international</div></div>",
 
-"<div id='usaMap'><div class='row'><div class='col l4'><div class='questionTwo' id='usaWest'>West</div></div><div class='col l4'><div class='questionTwo' id='usaMidwest'>Midwest</div></div><div class='col l4'><div class='questionTwo' id='usaNortheast'>Northeast</div></div></div><div class='row'><div class='col l4 offset-l4'><div class='questionTwo' id='usaSouthwest'>Southwest</div></div><div class='col l4'><div class='questionTwo' id='usaSoutheast'>Southeast</div></div></div></div>",
+"<div id='usaMap'><div class='row'><div class='col s4 l4'><div class='questionTwo' id='usaWest'>West</div></div><div class='col  s4 l4'><div class='questionTwo' id='usaMidwest'>Midwest</div></div><div class='col s4 l4'><div class='questionTwo' id='usaNortheast'>Northeast</div></div></div><div class='row'><div class='col s4 l4 offset-s4 offset-l4'><div class='questionTwo' id='usaSouthwest'>Southwest</div></div><div class='col s4 l4'><div class='questionTwo' id='usaSoutheast'>Southeast</div></div></div></div>",
 
-"<div class='col l6'><img class='questionThreeImg' id='Business' src='https://png.icons8.com/metro/1600/business.png' alt='Business'><p class='questionThreeText'>Business</p></div><div class='col l6'><img class='questionThreeImg' id='Leisure' src='https://cdn3.iconfinder.com/data/icons/abstract-1/512/leisure_A-128.png' alt='Leisure'><p class='questionThreeText'>Leisure</p></div>",
+"<div class='col s6 l6'><img class='questionThreeImg' id='Business' src='https://png.icons8.com/metro/1600/business.png' alt='Business'><p class='questionThreeText'>Business</p></div><div class='col s6 l6'><img class='questionThreeImg' id='Leisure' src='https://cdn3.iconfinder.com/data/icons/abstract-1/512/leisure_A-128.png' alt='Leisure'><p class='questionThreeText'>Leisure</p></div>",
 
 "<div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Spring' src='https://media.giphy.com/media/l4hLSoxh3bZOvrn0c/giphy.gif' alt='String'></div><div class='col m2'><p>Spring</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class ='questionFour' id='Summer' src='https://media.giphy.com/media/12G7BxUHSMM2TC/giphy.gif' alt='Summer'></div><div class='col m2'><p>Summer</p></div></div></div><div class='divider'></div><div class='section'><div class='row'><div class='col m2'><img class='questionFour' id='Fall' src='https://media.giphy.com/media/UxTZDNv0Zej4s/giphy.gif' alt='Fall'></div><div class='col m2'><p>Fall</p></div></div></div><div class='divider'></div><div class='section' id='winterBackground'><div class='row'><div class='col m2'><img class='questionFour' id='Winter' src='https://media.giphy.com/media/OWxrxRHY6afRu/giphy.gif' alt='Winter'></div><div class='col m2'><p>Winter</p></div></div></div>",
 
@@ -11,11 +11,11 @@ var mainContentHtml= ["<div class='col l6'><div class='questionOnebox circle' id
 
 "<form class='col s9 questionSix' id='mainContent'><div class='row-center'><div class='input-field col s6 offset-s3'><input id='userBudget' type='text' class='validate'><label class='active' for='budget'> Enter budget</label></div></div><button class='btn waves-effect waves-light' id='questionSixButton' type='submit' name='action'>Submit</button></form>",
 
-"<div class='col l6'><img class='questionThreeImg' id='male' src='./images/man.png' height={{500px}} width={{500px}} alt='male'><p class='questionThreeText'>Male</p></div><div class='col l6'><img class='questionThreeImg' id='female'  src='./images/woman.png' height={{500px}} width={{500px}} alt='Female'><p class='questionThreeText'>Female</p></div>",
+"<div class='col s6 l6'><img class='questionThreeImg' id='male' src='./images/man.png' height={{500px}} width={{500px}} alt='male'><p class='questionThreeText'>Male</p></div><div class='col s6 l6'><img class='questionThreeImg' id='female'  src='./images/woman.png' height={{500px}} width={{500px}} alt='Female'><p class='questionThreeText'>Female</p></div>",
 
-"<div class='col l6'><img class='questionThreeImg' id='kids' src='./images/kids.png' height={{500px}} width={{500px}} alt='kids'><p class='questionThreeText'>Kids</p></div><div class='col l6'><img class='questionThreeImg' id='no-kids'  src='./images/no-kids.png' height={{500px}} width={{500px}} alt='no-kids'><p class='questionThreeText'>No-Kids</p></div>",
+"<div class='col s6 l6'><img class='questionThreeImg' id='kids' src='./images/kids.png' height={{500px}} width={{500px}} alt='kids'><p class='questionThreeText'>Kids</p></div><div class='col s6 l6'><img class='questionThreeImg' id='no-kids'  src='./images/no-kids.png' height={{500px}} width={{500px}} alt='no-kids'><p class='questionThreeText'>No-Kids</p></div>",
 
-"<div class='col l6'><img class='questionThreeImg' id='pets' src='./images/pets.png' height={{500px}} width={{500px}} alt='pets'><p class='questionThreeText'>Pets</p></div><div class='col l6'><img class='questionThreeImg' id='no-pets'  src='./images/no-pets.png' height={{500px}} width={{500px}} alt='no-pets'><p class='questionThreeText'>No-Pets</p></div>",
+"<div class='col s6 l6'><img class='questionThreeImg' id='pets' src='./images/pets.png' height={{500px}} width={{500px}} alt='pets'><p class='questionThreeText'>Pets</p></div><div class='col s6 l6'><img class='questionThreeImg' id='no-pets'  src='./images/no-pets.png' height={{500px}} width={{500px}} alt='no-pets'><p class='questionThreeText'>No-Pets</p></div>",
 
 "<div class='row'><div class='col m12' id='outputMainContent'></div><div class='row center'><h2 class='header col s12' id='regionName'></h2></div></div></div><div class='row center-align' id='weatherType'></div><div class='row center-align'><div class='col m4'><div id='ouputTravelType'></div></div><div class='col m4'><div id='outputSeason'></div></div><div class='col m4'><div class='outputBudget'></div></div></div><div class='divider'></div><div class='row center'><div class='col s4' id='userOutputTip1Photo1'></div><div class='col s8 left-align' id='userOutputTip1'></div></div><div class='row center'><div class='col s4' id='userOutputTip2Photo2'></div><div class='col s8 left-align' id='userOutputTip2'></div></div><div class='row center'><div class='col s4' id='userOutputTip3Photo3'></div><div class='col s8 left-align' id='userOutputTip3'></div></div><div class='divider'></div><ul id='theListOutPut'></ul>"];
 
@@ -102,7 +102,7 @@ var saveUserItem = function(){
 
 var makeBackBone = function (){
   $("body").empty()
-  $("body").html("<nav><div class='nav-wrapper nav-new-color'><a href=''#!'' class='brand-logo'></a><span id='questionPrompt'>loading</span><ul class='right hide-on-med-and-down'><li><a href=''></a></li></ul></div></nav><div class='container' id='contentSectionId'><div class='row'><div class='col l9' id='mainContent'></div><div class='col l3' id='sideContent'></div></div></div><footer class='page-footer'><div class='container'><div class='row'><div class='col l12'><h5 class='white-text' id='footerContent'>loading</h5></div></div></div></footer>");
+  $("body").html("<nav><div class='nav-wrapper nav-new-color'><a href=''#!'' class='brand-logo' id='brandLOGO'></a><span id='questionPrompt'>loading</span><ul class='right hide-on-med-and-down'><li><a href=''></a></li></ul></div></nav><div class='container' id='contentSectionId'><div class='row'><div class='col s12 l9' id='mainContent'></div><div class='col s4 offset-s4 l3' id='sideContent'></div></div></div><footer class='page-footer'><div class='container'><div class='row'><div class='col s12 l12'><h5 class='white-text' id='footerContent'>loading</h5></div></div></div></footer>");
 }
 
 var goBackBtn = function (){
@@ -722,6 +722,7 @@ var btnPrintGenerator =function (){
     window.print();
 
     document.body.innerHTML = originalContents;
+
   })
 }
 localStorageSave();
