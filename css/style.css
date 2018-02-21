@@ -2,8 +2,9 @@
   position: fixed;
   width: 230px;
   height: 150px;
-  top: 40%;
-  left: 42%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -111,7 +112,38 @@ html{
   height: 4rem;
   width: 4rem;
 }
+
 #theListOutPut{
   text-align: center;
   line-height: 25px;
+}
+
+@media screen and (max-width: 600px) {
+
+    #brandLOGO{
+      display: none;
+    }
+    #questionPrompt{
+
+      margin-left: 3%;
+      line-height: 0px;
+      font-size: 15px;
+    }
+    .questionOnebox{
+      width: 150px;
+      height: 150px!important;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      text-align: center;
+    }
+    .questionTwo{
+      width: 150px;
+      height: 100px;
+      padding-top: 30px;
+      text-align: center;
+      font-size: 20px;
+      color: orange;
+      font-weight: bold;
+    }
 }
