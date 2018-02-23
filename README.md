@@ -1,6 +1,6 @@
 # packingList
 
-project one
+group project
 
 Traveling is exciting, but oftentimes many people find packing to be the most cumbersome part of a journey. 
 Pack Man is a website designed to streamline the packing process and take the stress away from planning your next trip.
@@ -39,3 +39,9 @@ Be more specific with destination (states, cities, etc.)
 Email list to user
 Obtain weather information about destination
 Make a mobile application
+
+# group members
+Woojoo Byun
+Nicole Yoon
+Afolabi AkingBe
+Asha Baker
